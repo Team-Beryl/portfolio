@@ -130,7 +130,7 @@ const SignUp = () => {
 
           <div className="container signin text-center pt-3">
             <p className="text-sm">
-              Already have an account? <a href="#" className="text-blue-600" onClick={() => navigate("/signin")}>Sign in</a>.
+              Already have an account? <a href="#" className="text-blue-600" onClick={() => navigate("/sig")}>Sign in</a>.
             </p>
           </div>
         </form>

@@ -4,26 +4,22 @@ import { useNavigate } from "react-router-dom"
 const SignUp = () => {
   const navigate = useNavigate()
   return (
-    <div className='flex h-screen pl-20'>
-      <div className='bg-[#EE219A] w-1/2 flex flex-col justify-center items-center'>
+    <div className='flex '>
+      <div className='bg-[#EE219A] w-1/2 flex flex-col justify-center items-center '>
         <h1 className='text-3xl font-bold text-white pb-28'>Join Portfolio Hub</h1>
-        <p className='text'>
-          Welcome to PortfolioHub! <br />
-          Ready to explore innovative projects and creative designs? <br />
-          Sign up now to access exclusive content <br />
-          and stay updated with the latest developments. <br />
-          Join us and be inspired!
+        <p className='top-7'>
+           and get the opportunity to showcase your skills, <br /> projects and creativity to the world.
+           A well-crafted portfolio is an essential tool for <br /> any developer, and it will help you stand <br /> out in the competitive tech industry.
         </p>
         <p className='text'>
-          The best online portfolio website. We take our customers' <br />
-          work personally and deliver as expected.
+          
         </p>
       </div>
 
       <div className='px-10 flex flex-col justify-center items-center'>
         <h1 className='text-4xl font-bold pt-32'>Register</h1>
 
-        <div className='mx-auto mt-10'>
+        <div className='mx-auto'>
           <form className='bg-white rounded-full px-8 pt-6 pb-8 mb-4'>
             <div className='mb-4'>
               <input
@@ -88,7 +84,7 @@ const SignUp = () => {
                 className='bg-white hover:border-[#EE219A] hover:text-[#EE219A] text-black font-bold w-[400px] py-2 px-4 rounded-full focus:outline-none focus:shadow-outline'
                 type='button'
               >
-                <img src={google} alt="Google logo" className="w-7 inline mr-2" />
+                <img src={google} alt="Google logo" className="w-7 inline mr-2"  />
                 SIGNUP WITH GOOGLE
               </button>
             </div>
@@ -108,3 +104,5 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+

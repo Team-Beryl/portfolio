@@ -1,8 +1,13 @@
-import React from 'react'
+
+import { Outlet } from 'react-router-dom'
+import SideBar from '../../components/sidebar'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      <SideBar />
+      <Outlet/>
+    </div>
   )
 }
 

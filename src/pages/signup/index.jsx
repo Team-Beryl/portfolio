@@ -1,7 +1,7 @@
 import google from "../../images/google.jpg";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import bezz from "../../images/bezz.png"
+import bezz from "../../images/bezz.png";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -12,29 +12,26 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen">
-      
-      <div className="bg-[#EE219A] md:w-1/2 flex flex-col justify-center  py-32 md:py-64 px-8">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
+
+      <div className="bg-[#EE219A] md:w-1/2 flex flex-col justify-center py-16 md:py-32 px-8 md:px-16 -mt-14">
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">Join Portfolio Hub</h1>
-        <p className=" text-white">
-          Showcase your skills, projects, and creativity to the world. A well-crafted portfolio is an essential tool for any developer, helping you stand out in the competitive tech industry.
+        <p className="text-white text-center mb-8 text-lg">
+          and showcase your skills, projects, and creativity to the world. A well-crafted portfolio is an essential tool for any developer, helping you stand out in the competitive tech industry.
         </p>
 
-        {/* <div className="flex ">
-        <img src={bezz} alt="review img" className="w-20" />
-        <p> "I am absolutely thrilled with my new portfolio website! The design is stunning, showcasing my work beautifully with a modern and professional look. Navigation is smooth, and the user experience is top-notch. The attention to detail is evident in every aspect, from the responsive layout to the interactive features. Communication throughout the project was excellent, with timely updates and a clear understanding of my vision. This website has exceeded my expectations and has already impressed many of my clients and colleagues. I highly recommend this service to anyone looking to create a standout online presence. Thank you for the fantastic work!"
-
-        </p>
-      </div> */}
-      
+        <div className="flex items-center">
+          <div className="pr-14">
+            <img src={bezz} alt="review img" className="w-20 h-20 mr-4 rounded-full" />
+            <p className=" text-white">Sandra Amoanimaa</p>
+          </div>
+          <p className="text-white text-sm">
+            "I am absolutely thrilled with my new portfolio website! The design is stunning, showcasing my work beautifully with a modern and professional look. Navigation is smooth, and the user experience is top-notch. The attention to detail is evident in every aspect, from the responsive layout to the interactive features. Communication throughout the project was excellent, with timely updates and a clear understanding of my vision. This website has exceeded my expectations and has already impressed many of my clients and colleagues. I highly recommend this service to anyone looking to create a standout online presence. Thank you for the fantastic work!"
+          </p>
+        </div>
       </div>
 
-      
-
-
-      
-
-      <div className="px-6 md:px-10 flex flex-col justify-center items-center flex-grow py-10 md:py-0">
+      <div className="px-6 md:px-10 flex flex-col justify-center items-center flex-grow py-10 md:py-0 bg-white">
         <h1 className="text-3xl md:text-4xl font-bold pb-8">Register</h1>
 
         <form className="bg-white rounded-lg shadow-md px-8 pt-6 pb-8 mb-4 w-full max-w-md" onSubmit={handleSubmit(onSubmit)}>
@@ -46,7 +43,7 @@ const SignUp = () => {
               {...register("firstName", { required: "First name is required" })}
               aria-invalid={errors.firstName ? "true" : "false"}
             />
-            {errors.firstName && (<p className="text-red-500">{errors.firstName.message}</p>)}
+            {errors.firstName && (<p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>)}
           </div>
 
           <div className="mb-4">
@@ -57,7 +54,7 @@ const SignUp = () => {
               {...register("lastName", { required: "Last name is required" })}
               aria-invalid={errors.lastName ? "true" : "false"}
             />
-            {errors.lastName && (<p className="text-red-500">{errors.lastName.message}</p>)}
+            {errors.lastName && (<p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>)}
           </div>
 
           <div className="mb-4">
@@ -76,7 +73,7 @@ const SignUp = () => {
               {...register("email", { required: "Email is required" })}
               aria-invalid={errors.email ? "true" : "false"}
             />
-            {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
+            {errors.email && (<p className="text-red-500 text-sm mt-1">{errors.email.message}</p>)}
           </div>
 
           <div className="mb-4">
@@ -87,7 +84,7 @@ const SignUp = () => {
               {...register("userName", { required: "Username is required" })}
               aria-invalid={errors.userName ? "true" : "false"}
             />
-            {errors.userName && (<p className="text-red-500">{errors.userName.message}</p>)}
+            {errors.userName && (<p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>)}
           </div>
 
           <div className="mb-6">
@@ -98,7 +95,7 @@ const SignUp = () => {
               {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" } })}
               aria-invalid={errors.password ? "true" : "false"}
             />
-            {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
+            {errors.password && (<p className="text-red-500 text-sm mt-1">{errors.password.message}</p>)}
           </div>
 
           <div className="flex items-center justify-between mb-4">

@@ -1,4 +1,4 @@
-import { google, laptop } from "../../assets";
+import { google, laptop, quality } from "../../assets";
 import { useForm } from "react-hook-form";
 
 const Signin = () => {
@@ -11,7 +11,7 @@ const Signin = () => {
   return (
     <div className="flex">
       {/* Left Section: Sign-in Form */}
-      <div className="flex flex-col justify-center items-center h-screen w-1/2 p-10">
+      <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
         <div className="pb-7 font-sans text-center">
           <h1 className="text-4xl font-bold">Where did you go?</h1>
           <p className="text-2xl">Let's get you back in</p>
@@ -25,7 +25,7 @@ const Signin = () => {
               id="email"
               {...register("email", { required: "Email is required" })}
               placeholder="Email address"
-              className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-full outline-none"
+              className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-lg outline-none"
             />
             {errors.email && <p className="text-red-500">{errors.email.message}</p>}
           </div>
@@ -37,7 +37,7 @@ const Signin = () => {
               id="password"
               {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be at least 6 characters" } })}
               placeholder="Password"
-              className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-full outline-none"
+              className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-lg outline-none"
             />
             {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
@@ -45,7 +45,7 @@ const Signin = () => {
           {/* Sign In Button */}
           <button
             type="submit"
-            className="w-full h-10 mt-2 bg-blue-900 text-white rounded-full border border-blue-900 hover:bg-blue-800 transition duration-200"
+            className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
           >
             Sign In
           </button>
@@ -59,7 +59,7 @@ const Signin = () => {
 
           {/* Sign In with Google Button */}
           <button
-            className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-full text-gray-600 hover:bg-gray-100 transition duration-200"
+            className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200"
           >
             <img className="w-5 h-5 mr-2" src={google} alt="Google Logo" />
             Sign in with Google
@@ -68,9 +68,12 @@ const Signin = () => {
       </div>
 
       {/* Right Section: Image */}
-      <div className="w-1/2">
-        <img className="h-screen w-full object-cover" src={laptop} alt="Laptop" />
-      </div>
+
+      <div className="relative w-2/5">
+  <img className="h-screen w-full object-cover" src={quality} alt="image" />
+  <div className="absolute inset-0 bg-black opacity-30"></div>
+</div>
+
     </div>
   );
 };

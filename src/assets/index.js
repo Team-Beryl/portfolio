@@ -4,7 +4,8 @@ import background from "./img/background.jpg"
 import google from "./img/google.jpg"
 import login3 from "./img/login3.jpg"
 import laptop from "./img/laptop.jpg"
+import quality from "./img/quality.jpg"
 
 export{
-    waves, image, background,google,login3,laptop
+    waves, image, background,google,login3,laptop,quality
 }

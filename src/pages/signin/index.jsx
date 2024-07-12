@@ -5,9 +5,6 @@ const Signin = () => {
   return (
     <div className="flex">
 
-
-
-
       <div class="flex flex-col justify-center items-center h-screen w-1/2 ">
       <div className="pb-7 font-['Indie'] text-center ">
       <h1 className="text-4xl">Where did you go?</h1>

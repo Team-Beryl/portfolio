@@ -11,39 +11,39 @@ const F = {
         },
 
         {
-            icon: <BookText/>,
+            
             text: "About",
             link: "/dash/about"
         },
 
         {
-            icon: <FolderKanban/>,
+            
             text: "Skills",
             link: "/dash/skills"
         },
 
         {
-            icon: <FolderArchive/>,
+            
             text: "Experience",
             link: "/dash/experience"
 
         },
 
         {
-            icon: <BracesIcon/>,
+        
             text: "Projects",
             link: "/dash/projects"
 
         },
 
         {
-            icon: <Briefcase/>,
+            
             text: "Acheivement",
             link: "/dash/acheive"
         },
 
         {
-            icon: <BrickWall/>,
+            
             text: "Social Media",
             link: "/dash/social"
         }

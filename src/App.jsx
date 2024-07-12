@@ -5,7 +5,7 @@ import Preview from "./pages/preview";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 import DashboardLayout from "./pages/dashboard/layout";
-import Overview from "./pages/dashboard/pages/overview";
+// import Overview from "./components/overview"
 import Skills from "./pages/dashboard/pages/skills";
 import Projects from "./pages/dashboard/pages/projects";
 import Experience from "./pages/dashboard/pages/experience";
@@ -27,10 +27,10 @@ function App () {
   path: "dash",
   element: <DashboardLayout/>,
   children:[
-    {
-      index: true,
-      element: <Overview/>
-    },
+    // {
+    //   index: true,
+    //   element: <Overview/>
+    // },
 
     {
       path: "skills",

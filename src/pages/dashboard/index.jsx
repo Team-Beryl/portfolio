@@ -1,11 +1,11 @@
 
 import { Outlet } from 'react-router-dom'
-import Overview from './pages/overview'
+import Sidebar from '../../components/sidebar'
 
 const Dashboard = () => {
   return (
     <div>
-      <Overview/>
+      <Sidebar />
       <Outlet />
     </div>
   )

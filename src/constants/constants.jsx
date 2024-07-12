@@ -1,12 +1,12 @@
 
-import { BookText, BracesIcon, BrickWall, Briefcase, BriefcaseBusinessIcon, FolderArchive, FolderKanban, LayoutDashboard, LayoutDashboardIcon, LucideSeparatorVertical } from "lucide-react";
+
 
 
 const F = {
     NAVLINKS: [
         {
-            icon: <LayoutDashboard/>,
-            text: "Overview",
+            
+            text: "UserProfile",
             link: "/dash"
         },
 
@@ -47,6 +47,8 @@ const F = {
             text: "Social Media",
             link: "/dash/social"
         }
+
+        
     ]
 }
 

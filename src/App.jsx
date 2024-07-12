@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/landingpage";
-import Dashboard from "./pages/dashboard";
+
 import Preview from "./pages/preview";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
@@ -12,6 +12,8 @@ import Experience from "./pages/dashboard/pages/experience";
 import About from "./pages/dashboard/pages/about";
 import SocialMedia from "./pages/dashboard/pages/socialmedia";
 import Acheivement from "./pages/dashboard/pages/acheivement";
+
+
 
 function App () {
   const router = createBrowserRouter ([
@@ -27,7 +29,7 @@ function App () {
   children:[
     {
       index: true,
-      element:<Overview/>
+      element: <Overview/>
     },
 
     {

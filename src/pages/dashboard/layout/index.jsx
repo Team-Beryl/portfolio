@@ -1,11 +1,11 @@
-import React from 'react'
-import SideBar from '../../../components/sidebar'
+
 import { Outlet } from 'react-router-dom'
+import Overview from '../pages/overview'
 
 const DashboardLayout = () => {
   return (
     <div className='flex'>
-        <SideBar/>
+        <Overview/>
         <div className='w-full'>
             <Outlet/>
         

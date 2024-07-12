@@ -45,7 +45,7 @@ const F = {
         {
             icon: <BrickWall/>,
             text: "Social Media",
-            link: "/dash/socialmedia"
+            link: "/dash/social"
         }
     ]
 }

@@ -1,12 +1,12 @@
 
 import { Outlet } from 'react-router-dom'
-import SideBar from '../../components/sidebar'
+import Overview from './pages/overview'
 
 const Dashboard = () => {
   return (
     <div>
-      <SideBar />
-      <Outlet/>
+      <Overview/>
+      <Outlet />
     </div>
   )
 }

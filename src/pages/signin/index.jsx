@@ -1,43 +1,78 @@
-import { google, laptop,} from "../../assets";
-
+import { google, laptop, quality } from "../../assets";
+import { useForm } from "react-hook-form";
 
 const Signin = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data); // Replace with actual submission logic
+  };
+
   return (
     <div className="flex">
+      {/* Left Section: Sign-in Form */}
+      <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
+        <div className="pb-7 font-sans text-center">
+          <h1 className="text-4xl font-bold">Where did you go?</h1>
+          <p className="text-2xl">Let's get you back in</p>
+        </div>
 
-
-
-
-      <div class="flex flex-col justify-center items-center h-screen w-1/2 ">
-      <div className="pb-7 font-['Indie'] text-center ">
-      <h1 className="text-4xl">Where did you go?</h1>
-      <p className="text-2xl">Lets get you back in</p>
-      </div>
-       
-        <form class="w-full max-w-xs mx-auto">
-          <div class="mb-4">
-            <input type="text" id="email" name="email" placeholder="Email address" class="w-[350px] px-4 py-2 border-2  border-pink-600 text-gray-600 rounded-full outline-none" />
+        <form className="w-full max-w-xs mx-auto" onSubmit={handleSubmit(onSubmit)}>
+          {/* Email Input */}
+          <div className="mb-4">
+            <input
+              type="text"
+              id="email"
+              {...register("email", { required: "Email is required" })}
+              placeholder="Email address"
+              className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-lg outline-none"
+            />
+            {errors.email && <p className="text-red-500">{errors.email.message}</p>}
           </div>
-          <div class="mb-4">
-            <input type="password" id="password" name="password" placeholder="Password" class="w-[350px] px-4 py-2 border-2  border-pink-600 text-gray-600 rounded-full  outline-none" />
+
+          {/* Password Input */}
+          <div className="mb-4">
+            <input
+              type="password"
+              id="password"
+              {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be at least 6 characters" } })}
+              placeholder="Password"
+              className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-lg outline-none"
+            />
+            {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
-          <button type="submit" class="w-[350px] h-10 mt-2 bg-blue-900 text-white rounded-full border border-blue-900 hover:bg-blue-800 transition duration-200">Sign In</button>
-          <div class="flex items-center my-4 w-[350px]">
-            <hr class="flex-1 border-gray-300" />
-            <span class="mx-2 text-zinc-800">or</span>
-            <hr class="flex-1 border-gray-300" />
+
+          {/* Sign In Button */}
+          <button
+            type="submit"
+            className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
+          >
+            Sign In
+          </button>
+
+          {/* Divider */}
+          <div className="flex items-center my-4 w-full">
+            <hr className="flex-1 border-gray-300" />
+            <span className="mx-2 text-gray-600">or</span>
+            <hr className="flex-1 border-gray-300" />
           </div>
-          <button class="flex items-center justify-center w-[350px] h-10 border border-pink-600 rounded-full text-gray-600 hover:bg-gray-100 transition duration-200">
-            <img class="w-5 h-5 mr-10" src={google} alt="Google Logo" />
+
+          {/* Sign In with Google Button */}
+          <button
+            className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200"
+          >
+            <img className="w-5 h-5 mr-2" src={google} alt="Google Logo" />
             Sign in with Google
           </button>
         </form>
       </div>
 
-      <div className="w-1/2 ">
-        <img  className="h-screen w-full" src={laptop} alt="img" />
-      </div>
+      {/* Right Section: Image */}
 
+      <div className="relative w-2/5">
+  <img className="h-screen w-full object-cover" src={quality} alt="image" />
+  <div className="absolute inset-0 bg-black opacity-30"></div>
+</div>
 
     </div>
   );

@@ -1,11 +1,23 @@
 import { google, laptop, quality } from "../../assets";
 import { useForm } from "react-hook-form";
+import { apiLogin } from "../../services/auth";
 
 const Signin = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data); // Replace with actual submission logic
+  const onSubmit = async(data) => {
+    console.log(data); 
+    try {
+      const res = await apiLogin({
+        email: data.email,
+        password: data.password,
+      });
+      console.log("Response: ", res)
+      
+
+    } catch (error) {
+     console.log(error) 
+    }
   };
 
   return (

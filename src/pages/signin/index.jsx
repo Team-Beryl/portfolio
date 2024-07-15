@@ -1,22 +1,34 @@
 import { google, laptop, quality } from "../../assets";
 import { useForm } from "react-hook-form";
 import { apiLogin } from "../../services/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate()
+
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async(data) => {
     console.log(data); 
+    setIsSubmitting(true);
+   
     try {
       const res = await apiLogin({
         email: data.email,
         password: data.password,
       });
-      console.log("Response: ", res)
-      
+      console.log("Response: ", res.data)
+      // redirect user to dashboard
+      navigate("/dash")
 
     } catch (error) {
-     console.log(error) 
+     console.log(error)
+
+    }
+    finally{
+      setIsSubmitting(false)
     }
   };
 
@@ -59,7 +71,8 @@ const Signin = () => {
             type="submit"
             className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
           >
-            Sign In
+           
+           {isSubmitting? "Loading....." : "Sign In"} 
           </button>
 
           {/* Divider */}

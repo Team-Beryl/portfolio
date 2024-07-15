@@ -1,18 +1,20 @@
+import { ArrowUpRight } from "lucide-react"
 
 
 const ExperienceCard = ({title, role, responsibility, location,Date,  skills, skills3, skills4}) => {
   return (
     <div  className=" text-white flex justify-center items-center  h-screen  shadow-2xl rounded-2xl">
 
-      <div className="flex gap-6">
+      <div className=" gap-6">
 
       <div>
-        <h4>{Date}</h4>
+        
       </div>
 
       <div className="flex flex-col w-96 gap-1">
-      <h1 className="text-cyan-400 font-bold text-[20px]"> {title} </h1> 
+       <a href="https://www.klaviyo.com/">  <h1 className="text-cyan-400 font-bold "> {title} </h1> </a> 
        <p className="text-cyan-400 font-semibold"> {role} </p>
+       <h4>{Date}</h4>
        <p>{responsibility}</p>
        <p> {location} </p>
        <p> {skills} </p>

@@ -13,10 +13,10 @@ const ProjectsCard = ({ name, description, contributors, skills,startDate,endDat
         </span>
 
         <div className="flex flex-col w-96 gap-1">
-          <h1 className="text-cyan-400 text-[20px] font-bold"> {name}  </h1>
-          <p> {description} </p>
+         <a href="https://halcyon-theme.netlify.app/"> <h1 className="text-cyan-400 text-[20px] font-bold"> {name}</h1>  </a>  
+          
+          <p className=""> {description} </p>
           <h2> {contributors} </h2>
-          <a href=""> {link} </a>
           <h1> {institution}  </h1>
           <div className="flex text-[#50C8CD] pt-5 pr-6  gap-5">
             <button className="border rounded-full text-white bg-[#183656] w-24 h-7 border-transparent outline-none">{h2}</button>

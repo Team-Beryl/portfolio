@@ -105,7 +105,7 @@ const Preview = () => {
         <div className='flex flex-col'>
           <ul className='pt-10 flex space-x-4'>
             <li>
-              <a href="https://github.com" className= 'rounded-full'>
+              <a href="https://github.com" className='rounded-full'>
                 <img className='w-9 rounded-full' src={github} alt="GitHub" />
               </a>
             </li>
@@ -114,7 +114,7 @@ const Preview = () => {
                 <img className='w-9 rounded-full' src={linkedin} alt="LinkedIn" />
               </a>
             </li>
-            <li>         
+            <li>
               <a href="https://twitter.com" className=' rounded-full'>
                 <img className='w-9 rounded-full' src={twitter} alt="Twitter" />
               </a>
@@ -134,9 +134,9 @@ const Preview = () => {
         )}
         {visibleCard === 'skills' && (
           <div id='skills'>
-            <SkillsCard 
-              name={"JavaScript"} 
-              levelOfProficiency={"Advanced"} 
+            <SkillsCard
+              name={"JavaScript"}
+              levelOfProficiency={"Advanced"}
               name1={"React"}
               levelOfProficiency1={"Intermediate"}
               name2={"Node.js"}
@@ -161,7 +161,7 @@ const Preview = () => {
               name={"Halycon Theme"}
               description={"Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more"}
               contributors={"Ray Clark, Emerald Jay"}
-              link={""}
+              link={"https://halcyon-theme.netlify.app/"}
               startDate={"January-"}
               endDate={"March 2023"}
               institution={"Amalitech"}

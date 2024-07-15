@@ -5,9 +5,9 @@ const AchievementCard = ({ title, award, description, image, date, nameOfInstitu
   return (
     <div className="text-white flex justify-center items-center  h-screen w-[60]shadow-2xl rounded-2xl ">
 
-      <div className="flex gap-6">
+      <div className=" gap-6">
 
-      <div> <img className="w-28" src={image} alt={name} /></div>
+       <img className="h-20" src={image} alt={name} />
 
       <div className="flex flex-col w-96 gap-1">
         <h2 className="text-cyan-400 font-bold text-[20px]">{award}</h2>

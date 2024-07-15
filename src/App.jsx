@@ -1,93 +1,101 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/landingpage";
-
 import Preview from "./pages/preview";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
-import DashboardLayout from "./pages/dashboard/layout";
-
 import Skills from "./pages/dashboard/pages/skills";
 import Projects from "./pages/dashboard/pages/projects";
 import Experience from "./pages/dashboard/pages/experience";
-import About from "./pages/dashboard/pages/about";
-import SocialMedia from "./pages/dashboard/pages/socialmedia";
 import Acheivement from "./pages/dashboard/pages/acheivement";
 import UserProfile from "./pages/dashboard/pages/userprofile";
+import DashboardHome from "./pages/dashboard/pages/home";
+import AddSkill from "./pages/dashboard/pages/addSkill";
+import AddProfile from "./pages/dashboard/pages/addprofile";
+import AddProject from "./pages/dashboard/pages/addproject";
 
 
 
 
 
-function App () {
-  const router = createBrowserRouter ([
-{
-  path: "/",
-  element: <LandingPage/>
 
-},
 
-{
-  path: "dash",
-  element: <DashboardLayout/>,
-  children:[
+function App() {
+  const router = createBrowserRouter([
     {
-      index: true,
-      element: <UserProfile/>
+      path: "/",
+      element: <LandingPage />
+
     },
 
     {
-      path: "skills",
-      element: <Skills/>
+      path: "dashboard",
+      element: <DashboardHome />
+    },
+    {
+      path: "dashboard/profile",
+      element: <UserProfile />
     },
 
     {
-      path: "projects",
-      element: <Projects/>
+      path: "dashboard/skills",
+      element: <Skills />
     },
 
     {
-      path: "experience",
-      element: <Experience/>
+      path: "dashboard/projects",
+      element: <Projects />
     },
 
     {
-      path: "about",
-      element: <About/>
+      path: "dashbaord/experiences",
+      element: <Experience />
+    },
+
+
+
+    {
+      path: "dashboard/acheivements",
+      element: <Acheivement />
+    },
+
+
+    {
+      path: "prev",
+      element: <Preview />
     },
 
     {
-      path: "social",
-      element: <SocialMedia/>
+      path: "sign",
+      element: <SignUp />
     },
 
     {
-      path: "acheive",
-      element: <Acheivement/>
+      path: "sig",
+      element: <Signin />
+    },
+
+    {
+      path: "dashboard/skills/add-skill",
+      element: <AddSkill />
+    },
+
+    {
+      path: "dashboard/profile/addprofile",
+      element: <AddProfile/>
+    },
+
+    {
+      path: "dashboard/projects/addproject",
+      element: <AddProject/>
     }
-  ]
-},
 
-{
-  path: "prev",
-  element: <Preview/>
-},
-
-{
-  path: "sign",
-  element: <SignUp/>
-},
-
-{
-  path: "sig",
-  element: <Signin/>
-}
 
   ])
 
 
-return (
-  <RouterProvider router={router} />
-)
+  return (
+    <RouterProvider router={router} />
+  )
 }
 
 export default App

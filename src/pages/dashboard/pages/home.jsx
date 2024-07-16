@@ -20,7 +20,7 @@ const DashboardHome = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-10">
-                <div className="border p-4 rounded-md shadow-lg mx-auto" onClick={() => navigate("/dashboard/userprofile")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/userprofile")}>
                     <img src={uploadimg} alt="User Profile" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Overview</span>
                     <p className="text-center mt-2">
@@ -30,7 +30,7 @@ const DashboardHome = () => {
                     </p>
                 </div>
 
-                <div className="border p-4 rounded-md shadow-lg mx-auto" onClick={() => navigate("/dashboard/profile")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/profile")}>
                     <img src={uploadimg} alt="User Profile" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">UserProfile</span>
                     <p className="text-center mt-2">
@@ -40,25 +40,25 @@ const DashboardHome = () => {
                     </p>
                 </div>
 
-                <div className="border p-4 rounded-md shadow-lg mx-auto" onClick={() => navigate("/dashbaord/experiences")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashbaord/experiences")}>
                     <img src={experienceimg} alt="Experiences" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Experiences</span>
                     <p className="text-center mt-2">This is your opportunity to tell your story and show potential employers the value you bring to their team.</p>
                 </div>
 
-                <div className="border p-4 rounded-md shadow-lg mx-auto" onClick={() => navigate("/dashboard/skills")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/skills")}>
                     <img src={skillimg} alt="Skills" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Skills</span>
                     <p className="text-center mt-2">Your skills section is a quick snapshot of what you bring to the table. This is your chance to present a comprehensive view of your capabilities and strengths to potential employers.</p>
                 </div>
 
-                <div className="border p-4 rounded-md shadow-lg mx-auto" onClick={() => navigate("/dashboard/projects")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/projects")}>
                     <img src={projectimg} alt="Projects" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Projects</span>
                     <p className="text-center mt-2">Your projects section is where you bring your skills to life. This is your chance to impress potential employers by showing what you can build and achieve.</p>
                 </div>
 
-                <div className="border p-4 rounded-md shadow-lg mx-auto" onClick={() => navigate("/dashboard/acheivements")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/acheivements")}>
                     <img src={acheiveimg} alt="Achievements" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Achievements</span>
                     <p className="text-center mt-2">Your achievements section is where you highlight your standout moments. This section is your opportunity to showcase the impact you've made and the goals you've achieved, making a strong impression on potential employers.</p>

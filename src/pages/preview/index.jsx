@@ -22,7 +22,7 @@ const Preview = () => {
 
 
 
-        {/* <div className='flex gap-4 '>
+        <div className='flex gap-4 '>
           <img className='w-[90px] rounded-full' src={emely} alt="image" />
           <h1 className='text-4xl font-bold tracking-tight text-white sm:text-5xl'>
             <a href=''>Britanny Chiang</a>
@@ -31,7 +31,7 @@ const Preview = () => {
         <h2 className='mt-3 text-lg font-medium tracking-tight text-white sm:text-xl'>Senior Frontend Engineer</h2>
         <p className='mt-4 max-w-xs leading-normal text-[#32ced3] font-semibold'>
           I build pixel-perfect, engaging, and accessible digital experiences.
-        </p> */}
+        </p>
         <nav className='pt-6'>
           <ul>
             <li>
@@ -106,7 +106,7 @@ const Preview = () => {
             </li>
           </ul>
         </nav>
-        {/* <div className='flex flex-col'>
+        <div className='flex flex-col'>
           <ul className='pt-10 flex space-x-4'>
             <li>
               <a href="https://github.com" className='rounded-full'>
@@ -124,7 +124,7 @@ const Preview = () => {
               </a>
             </li>
           </ul>
-        </div> */}
+        </div>
       </header>
       <div className='flex flex-col w-1/2 overflow-x-auto gap-5'>
         {visibleCard === 'about' && (

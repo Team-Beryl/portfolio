@@ -7,6 +7,7 @@ import ExperienceCard from '../../components/ExperienceCard';
 import VolunteeringCard from '../../components/VolunteeringCard';
 import EducationCard from '../../components/EducationCard';
 import { emely, github, internet, linkedin, twitter } from '../../assets';
+import UserProfileCard from '../../components/UserProfileCard';
 
 const Preview = () => {
   const [visibleCard, setVisibleCard] = useState('about'); // Default to 'about' card
@@ -19,9 +20,40 @@ const Preview = () => {
     <div className='flex justify-evenly items-center space-x-[400px] bg-gradient-to-r from-purple-500 to-pink-500 h-screen'>
       <header className='w-1/2 flex justify-center flex-col fixed top-12 left-16'>
         
-
-
-
+       <UserProfileCard   
+       image={emely}
+       name={"Britanny Chiang"}
+       location={"Califonia"}
+       sex={"Female"}
+       dateOfBirth={"3/01/1990"}
+       contact={"britchiang23@gmail.com"}
+       languages={"English"}
+       img={github} 
+      
+       
+       
+       
+       
+       
+       
+       
+       />
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         <div className='flex gap-4 '>
           <img className='w-[90px] rounded-full' src={emely} alt="image" />
           <h1 className='text-4xl font-bold tracking-tight text-white sm:text-5xl'>
@@ -32,6 +64,22 @@ const Preview = () => {
         <p className='mt-4 max-w-xs leading-normal text-[#32ced3] font-semibold'>
           I build pixel-perfect, engaging, and accessible digital experiences.
         </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <nav className='pt-6'>
           <ul>
             <li>

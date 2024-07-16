@@ -2,13 +2,80 @@ import google from "../../images/google.jpg";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import bezz from "../../images/bezz.png";
+import { useEffect, useState } from "react";
+import { apiCheckUsernameExist, apiSignUp } from "../../services/auth";
+import { toast } from "react-toastify";
+import { CirclesWithBar, } from "react-loader-spinner"
 
 const SignUp = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [usernameAvailable, setIsUsernameAvailable] = useState(false);
+  const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const checkUserName = async (userName) => {
+    try {
+      const res = await apiCheckUsernameExist(userName)
+      console.log(res.data);
+      const user = res.data.user;
+      if (user) {
+        setUsernameNotAvailable(true);
+
+      } else {
+        setIsUsernameAvailable(true);
+      }
+
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  };
+
+
+
+  const userNameWatch = watch("userName")
+  console.log(userNameWatch);
+
+  useEffect(() => {
+    if (userNameWatch) {
+      checkUserName(userNameWatch)
+    }
+  }, [userNameWatch])
+
+
+  const onSubmit = async (data) => {
     console.log(data);
+    setIsSubmitting(true)
+    let payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      userName: data.userName,
+      password: data.password,
+      email: data.email,
+      confirmedPassword: data.password
+    };
+
+    if (data.otherNames) {
+      payload = { ...payload, otherNames: data.otherNames };
+    }
+
+    try {
+      const res = await apiSignUp(payload);
+      console.log(res.data);
+      toast.success(res.data);
+
+      setTimeout(() => {
+        navigate("/sig")
+      }, 2000)
+
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
   };
 
   return (
@@ -60,7 +127,8 @@ const SignUp = () => {
           <div className="mb-4">
             <input
               type="text"
-              placeholder="Middle Name"
+              placeholder="Other Name"
+              {...register("otherName",)}
               className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -85,6 +153,15 @@ const SignUp = () => {
               aria-invalid={errors.userName ? "true" : "false"}
             />
             {errors.userName && (<p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>)}
+
+          {
+            usernameAvailable && <p className="text-green-500">Username is Available!</p>
+          }
+          
+          {
+            usernameNotAvailable && <p className="text-red-500">Username is already taken!</p>
+          }
+
           </div>
 
           <div className="mb-6">
@@ -103,7 +180,19 @@ const SignUp = () => {
               className="bg-[#EE219A] hover:bg-white hover:text-[#EE219A] text-white font-bold w-full py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              SIGN UP FOR FREE
+
+              {isSubmitting ? <CirclesWithBar
+                height="30"
+                width="30"
+                color="#DB2777"
+                outerCircleColor="#DB2777"
+                innerCircleColor="#DB2777"
+                barColor="#DB2777"
+                ariaLabel="circles-with-bar-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              /> : "Signup For Free"}
             </button>
           </div>
 

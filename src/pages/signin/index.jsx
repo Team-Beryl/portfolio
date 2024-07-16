@@ -5,12 +5,12 @@ const Signin = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // Replace with actual submission logic
+    console.log(data); 
   };
 
   return (
     <div className="flex">
-      {/* Left Section: Sign-in Form */}
+    
       <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
         <div className="pb-7 font-sans text-center">
           <h1 className="text-4xl font-bold">Where did you go?</h1>
@@ -18,7 +18,7 @@ const Signin = () => {
         </div>
 
         <form className="w-full max-w-xs mx-auto" onSubmit={handleSubmit(onSubmit)}>
-          {/* Email Input */}
+        
           <div className="mb-4">
             <input
               type="text"
@@ -30,7 +30,7 @@ const Signin = () => {
             {errors.email && <p className="text-red-500">{errors.email.message}</p>}
           </div>
 
-          {/* Password Input */}
+          
           <div className="mb-4">
             <input
               type="password"
@@ -42,7 +42,7 @@ const Signin = () => {
             {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
 
-          {/* Sign In Button */}
+          
           <button
             type="submit"
             className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"

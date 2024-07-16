@@ -2,9 +2,11 @@ import React from 'react'
 import PagesLayout from '../layout/pageslayout'
 import F from '../../../constants/constants'
 import { Edit, Trash2Icon } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 
 const Projects = () => {
+  const navigate = useNavigate()
   return (
 
     <PagesLayout headerText="Projects" buttonDashboard="Back to Dashboard" buttonText="Add Projects" onClick={() => navigate("/dashboard/projects/addproject")}> 

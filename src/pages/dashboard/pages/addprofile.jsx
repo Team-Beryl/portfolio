@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const AddProfile = () => {
   return (
-    <div className="pt-24 pb-24 flex items-center justify-center  min-h-screen bg-gray-100">
+    <div className="pt-24 pb-24 flex items-center justify-center min-h-screen bg-gray-100">
       <form className="space-y-6 w-full max-w-md">
         <div className="bg-white p-4 rounded-lg shadow-md">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">First Name</label>
-          <input className="w-full px-3 py-2 border  focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" placeholder="Enter your name" />
+          <input className="w-full px-3 py-2 border focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" placeholder="Enter your name" />
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">Last Name</label>
@@ -41,7 +41,7 @@ const AddProfile = () => {
             <option value="work">Work</option>
             <option value="mobile">Mobile</option>
           </select>
-          <input type="text" placeholder='enter number' className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" placeholder='Enter number' className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="languages">Languages</label>
@@ -60,13 +60,15 @@ const AddProfile = () => {
           <input className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" />
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="profilePicture">Profile Picture</label>
+          <input className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="file" />
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-md">
           <input className="w-full bg-blue-500 text-white px-3 py-2 rounded-lg cursor-pointer" type="submit" value="Submit" />
-
-          
         </div>
       </form>
     </div>
-  )
+  );
 }
 
 export default AddProfile;

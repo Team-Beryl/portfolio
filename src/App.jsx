@@ -12,6 +12,8 @@ import DashboardHome from "./pages/dashboard/pages/home";
 import AddSkill from "./pages/dashboard/pages/addSkill";
 import AddProfile from "./pages/dashboard/pages/addprofile";
 import AddProject from "./pages/dashboard/pages/addproject";
+import AddExperience from "./pages/dashboard/pages/addexperience";
+import AddAcheivement from "./pages/dashboard/pages/addacheivement";
 
 
 
@@ -81,12 +83,22 @@ function App() {
 
     {
       path: "dashboard/profile/addprofile",
-      element: <AddProfile/>
+      element: <AddProfile />
     },
 
     {
       path: "dashboard/projects/addproject",
-      element: <AddProject/>
+      element: <AddProject />
+    },
+
+    {
+      path: "dashboard/experiences/addexperience",
+      element: <AddExperience />
+    },
+
+    {
+      path: "dashboard/acheivements/acheivement",
+      element: <AddAcheivement/>
     }
 
 

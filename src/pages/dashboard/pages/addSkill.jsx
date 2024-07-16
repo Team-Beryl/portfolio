@@ -9,12 +9,20 @@ const AddSkill = () => {
         className="h-[300px] md:w-1/2 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
         placeholder="Enter a skill"
       />
-
-<input
-          className=" bg-blue-500 text-white px-3 py-2 rounded-lg hcursor-pointer"
-          type="submit"
-          value="Submit"
-        />
+      <div>
+        <label className="block text-gray-700 font-bold mb-2">Level of Proficiency</label> <br />
+        <select className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="">Select</option>
+          <option value="female">Beginner</option>
+          <option value="male">Intermediate</option>
+          <option value="male">Advance</option>
+        </select>
+      </div>
+      <input
+        className=" bg-blue-500 text-white px-3 py-2 rounded-lg hcursor-pointer"
+        type="submit"
+        value="Submit"
+      />
     </div>
   )
 }

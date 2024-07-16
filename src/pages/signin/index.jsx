@@ -50,14 +50,14 @@ const Signin = () => {
             Sign In
           </button>
 
-          {/* Divider */}
+         
           <div className="flex items-center my-4 w-full">
             <hr className="flex-1 border-gray-300" />
             <span className="mx-2 text-gray-600">or</span>
             <hr className="flex-1 border-gray-300" />
           </div>
 
-          {/* Sign In with Google Button */}
+          
           <button
             className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200"
           >
@@ -67,7 +67,7 @@ const Signin = () => {
         </form>
       </div>
 
-      {/* Right Section: Image */}
+    
 
       <div className="relative w-2/5">
   <img className="h-screen w-full object-cover" src={quality} alt="image" />

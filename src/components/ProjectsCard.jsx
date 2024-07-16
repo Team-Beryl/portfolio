@@ -3,18 +3,18 @@
 const ProjectsCard = ({ name, description, contributors, skills,startDate,endDate, link, institution, Date, h2, h4}) => {
 
   return (
-    <div className=" text-white flex justify-center items-center h-screen w-[60] shadow-2xl rounded-lg">
+    <div className=" text-white flex justify-center items-center h-[70] w-[60] pl-24">
 
-      <div className="flex gap-6">
+      <div className="flex justify-center  gap-3">
 
-        <span className="flex">
-          <h2> {startDate} </h2>
-          <h2> {endDate} </h2>
-        </span>
+       
 
         <div className="flex flex-col w-96 gap-1">
          <a href="https://halcyon-theme.netlify.app/"> <h1 className="text-cyan-400 text-[20px] font-bold"> {name}</h1>  </a>  
-          
+         <span className="flex">
+          <h2> {startDate} </h2>
+          <h2> {endDate} </h2>
+        </span>
           <p className=""> {description} </p>
           <h2> {contributors} </h2>
           <h1> {institution}  </h1>

@@ -19,66 +19,21 @@ const Preview = () => {
   return (
     <div className='flex justify-evenly items-center space-x-[400px] bg-gradient-to-r from-purple-500 to-pink-500 h-screen'>
       <header className='w-1/2 flex justify-center flex-col fixed top-12 left-16'>
-        
-       <UserProfileCard   
-       image={emely}
-       name={"Britanny Chiang"}
-       location={"Califonia"}
-       sex={"Female"}
-       dateOfBirth={"3/01/1990"}
-       contact={"britchiang23@gmail.com"}
-       languages={"English"}
-       img={github} 
-      
-       
-       
-       
-       
-       
-       
-       
-       />
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-        <div className='flex gap-4 '>
-          <img className='w-[90px] rounded-full' src={emely} alt="image" />
-          <h1 className='text-4xl font-bold tracking-tight text-white sm:text-5xl'>
-            <a href=''>Britanny Chiang</a>
-          </h1>
+
+        <div className=''>
+          <UserProfileCard
+            img={emely}
+            name={"Britanny Chiang"}
+            location={"Califonia"}
+            sex={"Female"}
+            dateOfBirth={"3/01/1990"}
+            contact={"britchiang23@gmail.com"}
+            languages={"English, Spanish"}
+            linkedin={"https://www.linkedin.com/in/elsiesebiyam/"}
+            twitter={"https://x.com/eve51237?s=21"}
+            github={"https://github.com"}
+          />  
         </div>
-        <h2 className='mt-3 text-lg font-medium tracking-tight text-white sm:text-xl'>Senior Frontend Engineer</h2>
-        <p className='mt-4 max-w-xs leading-normal text-[#32ced3] font-semibold'>
-          I build pixel-perfect, engaging, and accessible digital experiences.
-        </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <nav className='pt-6'>
           <ul>
@@ -88,8 +43,9 @@ const Preview = () => {
                 href='#about'
                 onClick={() => handleLinkClick('about')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>About</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+
+                <span className='text-xs font-bold uppercase tracking-widest text-white group-hover:text-white group-focus-visible:text-white'>About</span>
               </a>
             </li>
             <li>
@@ -98,8 +54,9 @@ const Preview = () => {
                 href='#skills'
                 onClick={() => handleLinkClick('skills')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>Skills</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+
+                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-white group-focus-visible:text-white'>Skills</span>
               </a>
             </li>
             <li>
@@ -108,8 +65,8 @@ const Preview = () => {
                 href='#achievement'
                 onClick={() => handleLinkClick('achievement')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>Achievement</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+                <span className='text-xs font-bold uppercase tracking-widest text-white group-hover:text-white group-focus-visible:text-white'>Achievement</span>
               </a>
             </li>
             <li>
@@ -118,8 +75,8 @@ const Preview = () => {
                 href='#projects'
                 onClick={() => handleLinkClick('projects')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>Projects</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+                <span className='text-xs font-bold uppercase tracking-widest text-white group-hover:text-white group-focus-visible:text-white'>Projects</span>
               </a>
             </li>
             <li>
@@ -128,8 +85,8 @@ const Preview = () => {
                 href='#experience'
                 onClick={() => handleLinkClick('experience')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>Experiences</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-white group-focus-visible:text-white'>Experiences</span>
               </a>
             </li>
             <li>
@@ -138,8 +95,8 @@ const Preview = () => {
                 href='#education'
                 onClick={() => handleLinkClick('education')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>Education</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-white group-focus-visible:text-white'>Education</span>
               </a>
             </li>
             <li>
@@ -148,39 +105,23 @@ const Preview = () => {
                 href='#volunteering'
                 onClick={() => handleLinkClick('volunteering')}
               >
-                <span className='mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-slate-200 group-focus-visible:text-slate-200'>Volunteer</span>
+                <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
+                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-white group-focus-visible:text-white'>Volunteer</span>
               </a>
             </li>
           </ul>
         </nav>
-        <div className='flex flex-col'>
-          <ul className='pt-10 flex space-x-4'>
-            <li>
-              <a href="https://github.com" className='rounded-full'>
-                <img className='w-9 rounded-full' src={github} alt="GitHub" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com" className='rounded-full'>
-                <img className='w-9 rounded-full' src={linkedin} alt="LinkedIn" />
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com" className=' rounded-full'>
-                <img className='w-9 rounded-full' src={twitter} alt="Twitter" />
-              </a>
-            </li>
-          </ul>
-        </div>
+
       </header>
+
+      
       <div className='flex flex-col w-1/2 overflow-x-auto gap-5'>
         {visibleCard === 'about' && (
           <div id='about'>
             <AboutCard
               description={"Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I've had the privilege of building software for an advertising agency, a start-up, a huge corporation, and a digital product studio."}
-              description1={"My main focus these days is building accessible user interfaces for our customers at Klaviyo. I most enjoy building software in the sweet spot where design and engineering meet — things that look good but are also built well under the hood. In my free time, I've also released an online video course that covers everything you need to know to build a web app with the Spotify API."}
-              description2={" When I'm not at the computer, I'm usually rock climbing, reading, hanging out with my wife and two cats, or running around Hyrule searching for Korok seeds Korokseeds."}
+
+
             />
           </div>
         )}
@@ -199,7 +140,6 @@ const Preview = () => {
         {visibleCard === 'achievement' && (
           <div id='achievement'>
             <AchievementCard
-              title={"Achievements"}
               award={"Best UI/UX Design"}
               description={"Awarded for exceptional user interface and user experience design skills. Describe the projects or features that led to winning the award, focusing on design principles, usability improvements, and visual aesthetics."}
               image={internet}
@@ -208,7 +148,18 @@ const Preview = () => {
           </div>
         )}
         {visibleCard === 'projects' && (
-          <div id='projects'>
+          <div id='projects' className='grid grid-col-2 gap-5'>
+            <ProjectsCard
+              name={"Halycon Theme"}
+              description={"Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more"}
+              contributors={"Ray Clark, Emerald Jay"}
+              link={"https://halcyon-theme.netlify.app/"}
+              startDate={"January-"}
+              endDate={"March 2023"}
+              institution={"Amalitech"}
+              h2={"React"}
+              h4={"MongoDB"}
+            />
             <ProjectsCard
               name={"Halycon Theme"}
               description={"Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more"}
@@ -257,12 +208,13 @@ const Preview = () => {
               skills={"HTML"}
               skills1={"JavaScript"}
               skills2={"UX/UI design"}
+              projectName={"Website Enhancement Project"}
               startDate={"July-"}
               endDate={"September 2023"}
               location={"Remote (virtual volunteering)"}
               role={"Volunteer Web Developer"}
               responsibility={"Collaborated with a team of developers and designers to enhance the organization's website. Developed new features, optimized code for performance, and ensured cross-browser compatibility and responsiveness."}
-              projectName={"Website Enhancement Project"}
+
             />
           </div>
         )}

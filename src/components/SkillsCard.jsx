@@ -2,7 +2,7 @@
 
 const SkillsCard = ({name, name1,name2, levelOfProficiency, levelOfProficiency1, levelOfProficiency2}) => {
   return (
-    <div className="flex   justify-center items-center h-screen w-[60] shadow-2xl rounded-lg">
+    <div className="flex   justify-center items-center h-screen w-[60] shadow-2xl ">
       
         <div className="flex flex-col gap-3">
         <h1 className="text-cyan-400 text-[20px] text-center">{name}</h1>

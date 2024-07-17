@@ -1,4 +1,4 @@
-import { left, right } from "../../assets"
+import { left} from "../../assets"
 
 
 const LandingPage = () => {

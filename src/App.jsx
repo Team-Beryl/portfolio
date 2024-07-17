@@ -38,6 +38,8 @@ function App() {
       path: "dashboard",
       element: <DashboardHome />
     },
+
+
     {
       path: "dashboard/profile",
       element: <UserProfile />

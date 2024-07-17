@@ -47,7 +47,33 @@ const F = {
             text: "Social Media",
             link: "/dash/socialmedia"
         }
-    ]
+    ],
+
+   NAV: [
+    {
+        name: "Home",
+        path:"/"
+    },
+    {
+        name: "Dashboard",
+        path:"/dash"
+    },
+    {
+        name: "Preview",
+        path:"/prev"
+    },
+    {
+        name: "Sign Up",
+        path:"/sign"
+    },
+    {
+        name: "Sign In",
+        path:"/sig"
+    },
+
+   ]
+
+
 }
 
 export default F

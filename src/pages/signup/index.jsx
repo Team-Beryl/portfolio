@@ -2,13 +2,103 @@ import google from "../../images/google.jpg";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import bezz from "../../images/bezz.png";
+import { useEffect, useState } from "react";
+import { apiCheckUsernameExist, apiSignUp } from "../../services/auth";
+import { toast } from "react-toastify";
+import Loader from "../../components/loader";
+import { debounce } from "lodash";
 
 const SignUp = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [usernameAvailable, setIsUsernameAvailable] = useState(false);
+  const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
+  const [isUsernameLoading, setIsUsernameLoading] = useState(false)
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const checkUserName = async (userName) => {
+    
+    setIsUsernameLoading(true)
+    try {
+      const res = await apiCheckUsernameExist(userName)
+      console.log(res.data);
+      const user = res.data.user;
+      if (user) {
+        setUsernameNotAvailable(true);
+        setIsUsernameAvailable(false)
+
+      } else {
+        setIsUsernameAvailable(true);
+        setUsernameNotAvailable(false);
+
+      }
+      
+
+
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+
+    } finally {
+      setIsUsernameLoading(false)
+    }
+
+
+  };
+
+
+
+  const userNameWatch = watch("userName")
+  console.log(userNameWatch);
+
+  useEffect(() => {
+    const debouncedSearch = debounce(async() => {
+      if (userNameWatch) {
+        await checkUserName(userNameWatch)
+      }
+    }, 1000)
+
+    debouncedSearch()
+
+    return () => {
+  debouncedSearch.cancel()
+
+    }
+
+  }, [userNameWatch])
+
+
+  const onSubmit = async (data) => {
     console.log(data);
+    setIsSubmitting(true)
+    let payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      username: data.userName,
+      password: data.password,
+      email: data.email,
+      confirmedPassword: data.password
+    };
+
+    if (data.otherNames) {
+      payload = { ...payload, otherNames: data.otherNames };
+    }
+
+    try {
+      const res = await apiSignUp(payload);
+      console.log(res.data);
+      toast.success(res.data);
+
+      setTimeout(() => {
+        navigate("/sig")
+      }, 2000)
+
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
   };
 
   return (
@@ -60,7 +150,8 @@ const SignUp = () => {
           <div className="mb-4">
             <input
               type="text"
-              placeholder="Middle Name"
+              placeholder="Other Name"
+              {...register("otherName",)}
               className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -85,6 +176,19 @@ const SignUp = () => {
               aria-invalid={errors.userName ? "true" : "false"}
             />
             {errors.userName && (<p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>)}
+
+            <div className="flex items-center gap-x-2">
+              {isUsernameLoading && <Loader />}
+              {
+                usernameAvailable && <p className="text-green-500">Username is Available!</p>
+              }
+
+              {
+                usernameNotAvailable && <p className="text-red-500">Username is already taken!</p>
+              }
+
+
+            </div>
           </div>
 
           <div className="mb-6">
@@ -103,7 +207,8 @@ const SignUp = () => {
               className="bg-[#EE219A] hover:bg-white hover:text-[#EE219A] text-white font-bold w-full py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              SIGN UP FOR FREE
+
+              {isSubmitting ? <Loader/> : "Signup For Free"}
             </button>
           </div>
 

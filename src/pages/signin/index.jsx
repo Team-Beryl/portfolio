@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CirclesWithBar } from "react-loader-spinner"
 import { toast } from "react-toastify";
+import Loader from "../../components/loader";
 
 const Signin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,7 +21,7 @@ const Signin = () => {
         email: data.email,
         password: data.password,
       });
-      console.log("Response: ", res.data)
+      console.log("Response", res.data)
       toast.success(res.data)
       setTimeout(() => {
         navigate("/dash");
@@ -79,18 +79,7 @@ const Signin = () => {
             className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
           >
 
-            {isSubmitting ? <CirclesWithBar
-              height="30"
-              width="30"
-              color="#DB2777"
-              outerCircleColor="#DB2777"
-              innerCircleColor="#DB2777"
-              barColor="#DB2777"
-              ariaLabel="circles-with-bar-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            /> : "Sign In"}
+            {isSubmitting ? <Loader/> : "Sign In"}
           </button>
 
 

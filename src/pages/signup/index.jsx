@@ -5,32 +5,45 @@ import bezz from "../../images/bezz.png";
 import { useEffect, useState } from "react";
 import { apiCheckUsernameExist, apiSignUp } from "../../services/auth";
 import { toast } from "react-toastify";
-import { CirclesWithBar, } from "react-loader-spinner"
+import Loader from "../../components/loader";
+import { debounce } from "lodash";
 
 const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [usernameAvailable, setIsUsernameAvailable] = useState(false);
   const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
+  const [isUsernameLoading, setIsUsernameLoading] = useState(false)
   const navigate = useNavigate();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
   const checkUserName = async (userName) => {
+    
+    setIsUsernameLoading(true)
     try {
       const res = await apiCheckUsernameExist(userName)
       console.log(res.data);
       const user = res.data.user;
       if (user) {
         setUsernameNotAvailable(true);
+        setIsUsernameAvailable(false)
 
       } else {
         setIsUsernameAvailable(true);
+        setUsernameNotAvailable(false);
+
       }
+      
 
 
     } catch (error) {
       console.log(error)
+      toast.error(error.message)
 
+    } finally {
+      setIsUsernameLoading(false)
     }
+
+
   };
 
 
@@ -39,9 +52,19 @@ const SignUp = () => {
   console.log(userNameWatch);
 
   useEffect(() => {
-    if (userNameWatch) {
-      checkUserName(userNameWatch)
+    const debouncedSearch = debounce(async() => {
+      if (userNameWatch) {
+        await checkUserName(userNameWatch)
+      }
+    }, 1000)
+
+    debouncedSearch()
+
+    return () => {
+  debouncedSearch.cancel()
+
     }
+
   }, [userNameWatch])
 
 
@@ -51,7 +74,7 @@ const SignUp = () => {
     let payload = {
       firstName: data.firstName,
       lastName: data.lastName,
-      userName: data.userName,
+      username: data.userName,
       password: data.password,
       email: data.email,
       confirmedPassword: data.password
@@ -154,14 +177,18 @@ const SignUp = () => {
             />
             {errors.userName && (<p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>)}
 
-          {
-            usernameAvailable && <p className="text-green-500">Username is Available!</p>
-          }
-          
-          {
-            usernameNotAvailable && <p className="text-red-500">Username is already taken!</p>
-          }
+            <div className="flex items-center gap-x-2">
+              {isUsernameLoading && <Loader />}
+              {
+                usernameAvailable && <p className="text-green-500">Username is Available!</p>
+              }
 
+              {
+                usernameNotAvailable && <p className="text-red-500">Username is already taken!</p>
+              }
+
+
+            </div>
           </div>
 
           <div className="mb-6">
@@ -181,18 +208,7 @@ const SignUp = () => {
               type="submit"
             >
 
-              {isSubmitting ? <CirclesWithBar
-                height="30"
-                width="30"
-                color="#DB2777"
-                outerCircleColor="#DB2777"
-                innerCircleColor="#DB2777"
-                barColor="#DB2777"
-                ariaLabel="circles-with-bar-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-              /> : "Signup For Free"}
+              {isSubmitting ? <Loader/> : "Signup For Free"}
             </button>
           </div>
 

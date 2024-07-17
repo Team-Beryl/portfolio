@@ -42,13 +42,11 @@ const Signin = () => {
 
   return (
     <div className="flex">
-
-      <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
+  <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
         <div className="pb-7 font-sans text-center">
           <h1 className="text-4xl font-bold">Where did you go?</h1>
           <p className="text-2xl">Let's get you back in</p>
         </div>
-
         <form className="w-full max-w-xs mx-auto" onSubmit={handleSubmit(onSubmit)}>
 
           <div className="mb-4">

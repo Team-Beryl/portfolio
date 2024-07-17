@@ -6,8 +6,11 @@ const LandingPage = () => {
         <div>
             <div>
 
-            <img className="w-1/2" src={left} alt="image" />
-            <img src={right} alt="image" />
+      <div>
+        <img src={} alt="" />
+      <img src= {left} alt="" />
+      </div>
+
 
             </div>
 Landing

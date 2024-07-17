@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Overview = () => {
+const OverView = () => {
   return (
-    <div>Overview</div>
+    <div>OverView</div>
   )
 }
 
-export default Overview
+export default OverView

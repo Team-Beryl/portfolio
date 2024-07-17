@@ -5,7 +5,7 @@ const LandingPage = () => {
     <div>
 
       <div>
-        <img src={} alt="" />
+       
       <img src= {left} alt="" />
       </div>
 

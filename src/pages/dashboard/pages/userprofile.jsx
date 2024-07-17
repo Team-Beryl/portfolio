@@ -42,6 +42,8 @@ const UserProfile = () => {
           <p className="text-base text-gray-700">I build pixel-perfect, engaging, and accessible digital experiences.</p>
 
           <div>
+
+            
           
           </div>
 

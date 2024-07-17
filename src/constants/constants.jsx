@@ -1,5 +1,7 @@
 import { DivideSquareIcon } from "lucide-react"
 
+import award from "../images/award.jpg"
+
 
 
 
@@ -255,8 +257,8 @@ const F = {
             role: "Software Engineer",
             description: "Participate in hackathons focused on social good. Websites like Devpost and Hackathons for Good list events where you can collaborate with others to create tech solutions for various causes.",
             startDate: " Start Date: July 2014",
-         
-           endDate: "End Date: July 2018"
+
+            endDate: "End Date: July 2018"
         },
 
         {
@@ -266,6 +268,37 @@ const F = {
             description: "Participate in hackathons focused on social good. Websites like Devpost and Hackathons for Good list events where you can collaborate with others to create tech solutions for various causes.",
             startDate: " Start Date: July 2014",
             endDate: "End Date: July 2018"
+        }
+
+    ],
+
+    ACHEIVEMENTS: [
+        {
+            award: "Best UI/UX Design",
+            nameOfInstitution: "Amalitech",
+            description: "Awarded for exceptional user interface and user experience design projects or features that led to winning the award,focusing on design principles and visual aesthetics. ",
+            image: award 
+        },
+
+        {
+            award: "Employee of the Year",
+            nameOfInstitution: "Google",
+            description: "Awarded for exceptional user interface and user experience design projects or features that led to winning the award,focusing on design principles and visual aesthetics. ",
+            image: award 
+        },
+
+        {
+            award: "Best UI/UX Design",
+            nameOfInstitution: "Amalitech",
+            description: "Awarded for exceptional user interface and user experience design projects or features that led to winning the award,focusing on design principles and visual aesthetics. ",
+            image: award 
+        },
+
+        {
+            award: "Best Frontend Design",
+            nameOfInstitution: "Pinterest",
+            description: "Awarded for exceptional user interface and user experience design projects or features that led to winning the award,focusing on design principles and visual aesthetics. ",
+            image: award 
         }
 
     ]

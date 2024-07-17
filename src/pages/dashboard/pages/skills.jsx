@@ -8,7 +8,7 @@ const Skills = () => {
   const navigate = useNavigate()
   return (
     <PagesLayout headerText="skills" buttonDashboard="Back to Dashboard" buttonText="Add new skills " onClick={() => navigate("/dashboard/skills/add-skill")}>
-      <div className='bg-gray-100 min-h-screen p-6'>
+      <div className='bg-gray-500 min-h-screen p-6'>
         <div className='grid grid-cols-4 gap-6 pt-14'>
           {
             F.SKILLS.map((skill, index) => (

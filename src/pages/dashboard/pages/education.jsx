@@ -1,15 +1,16 @@
 import { Edit, Trash2Icon } from 'lucide-react'
 import F from '../../../constants/constants'
 import PagesLayout from '../layout/pageslayout'
+import { useNavigate } from 'react-router-dom'
 
 const Education = () => {
+  const navigate = useNavigate()
   return (
     <div>
 
-      <PagesLayout headerText="Education" buttonDashboard="Back to Dashboard" buttonText="Add Education">
+      <PagesLayout headerText="Education" buttonDashboard="Back to Dashboard" buttonText="Add Education" onClick={() => navigate("/dashboard/education/addeducation")}>
 
-        <div className='bg-gray-100 min-h-screen p-6 pt-4'>
-
+        <div className='bg-gray-500 min-h-screen p-6 pt-4'>
           <div className='grid grid-cols-4 gap-6 pt-14'>
 
             {

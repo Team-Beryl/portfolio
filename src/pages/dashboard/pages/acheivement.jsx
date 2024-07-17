@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const Acheivement = () => {
   const navigate = useNavigate ()
   return (
-
+ <div>
     <PagesLayout headerText="Acheivements" buttonDashboard= "Back to Dashboard" buttonText="Add Acheivement" onClick={() => navigate("/dashboard/acheivements/addacheivement")}>
 
       <div className='bg-gray-500 min-h-screen p-6'>
@@ -35,6 +35,8 @@ const Acheivement = () => {
             ))
           }
         </div>
+        </div>
+        </PagesLayout>
       </div>
 
   )

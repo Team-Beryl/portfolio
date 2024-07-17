@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./pages/landingpage";
+
 import Dashboard from "./pages/dashboard";
 import Preview from "./pages/preview";
 import SignUp from "./pages/signup";
@@ -12,6 +12,7 @@ import Experience from "./pages/dashboard/pages/experience";
 import About from "./pages/dashboard/pages/about";
 import SocialMedia from "./pages/dashboard/pages/socialmedia";
 import Acheivement from "./pages/dashboard/pages/acheivement";
+import LandingPage from "./pages/Landingpage/index";
 
 function App () {
   const router = createBrowserRouter ([

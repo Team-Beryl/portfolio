@@ -1,3 +1,4 @@
+
 import { google, laptop, quality } from "../../assets";
 import { useForm } from "react-hook-form";
 import { apiLogin } from "../../services/auth";
@@ -71,7 +72,6 @@ const Signin = () => {
             {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
 
-
           <button
             type="submit"
             className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
@@ -80,13 +80,11 @@ const Signin = () => {
             {isSubmitting ? <Loader/> : "Sign In"}
           </button>
 
-
           <div className="flex items-center my-4 w-full">
             <hr className="flex-1 border-gray-300" />
             <span className="mx-2 text-gray-600">or</span>
             <hr className="flex-1 border-gray-300" />
           </div>
-
 
           <button
             className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200"

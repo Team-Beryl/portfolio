@@ -12,6 +12,5 @@ import twitter from "./img/twitter.jpg"
 import emely from "./img/emely.webp"
 import quality from "./img/quality.jpg"
 
-
 export{
-    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality}
+    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left,right,logo}

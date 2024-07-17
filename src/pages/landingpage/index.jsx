@@ -1,18 +1,12 @@
-import React from 'react'
+import { left, right } from "../../assets"
+
 
 const LandingPage = () => {
-  return (
-    <div>
-
-      <div>
-        <img src={} alt="" />
+    return (
+        <div>
       <img src= {left} alt="" />
-      </div>
-
-
-
-    </div>
-  )
+        </div>
+    )
 }
 
 export default LandingPage

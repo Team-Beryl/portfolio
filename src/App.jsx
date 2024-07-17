@@ -25,6 +25,7 @@ import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
 
 
 
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -56,9 +57,6 @@ function App() {
       path: "dashbaord/experiences",
       element: <Experience />
     },
-
-
-
     {
       path: "dashboard/acheivements",
       element: <Acheivement />
@@ -74,19 +72,19 @@ function App() {
       element: <Volunteering />
     },
 
-
     {
       path: "prev",
       element: <Preview />
     },
+  
 
     {
-      path: "sign",
+      path: "signup",
       element: <SignUp />
     },
 
     {
-      path: "sig",
+      path: "signin",
       element: <Signin />
     },
 
@@ -123,8 +121,7 @@ function App() {
     {
       path: "dashboard/education/addeducation",
       element: <AddEducation />
-    }
-
+    },
 
   ])
 

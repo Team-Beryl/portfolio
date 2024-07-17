@@ -31,7 +31,7 @@ const Signin = () => {
 
     } catch (error) {
       console.log(error)
-      toast.error(error)
+      toast.error("An error occured!")
 
     }
     finally {

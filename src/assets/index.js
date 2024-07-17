@@ -10,8 +10,8 @@ import linkedin from "./img/linkedin.jpg"
 import github from "./img/github.png"
 import twitter from "./img/twitter.jpg"
 import emely from "./img/emely.webp"
+import quality from "./img/quality.jpg"
 
 
 export{
-    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely
-}
+    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality}

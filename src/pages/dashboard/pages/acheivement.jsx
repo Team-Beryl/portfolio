@@ -1,4 +1,4 @@
-import React from 'react'
+
 import PagesLayout from '../layout/pageslayout'
 
 const Acheivement = () => {

@@ -12,7 +12,7 @@ const UserProfile = () => {
       <PagesLayout headerText="UserProfile" buttonDashboard="Back to Dashboard" buttonText="Add Profile Section" onClick={() => navigate("/dashboard/profile/addprofile")}>
 
         <div className="relative">
-          <img src={profilebg} alt="profilebg" className="w-full" />
+          <img src={profilebg} alt="profilebg" className="w-full pt-5" />
           <div className="pt-10">
             <img
               src={profileimg}

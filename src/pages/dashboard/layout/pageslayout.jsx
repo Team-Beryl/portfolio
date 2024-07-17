@@ -2,9 +2,9 @@
 
 const PagesLayout = ({ headerText, buttonDashboard, buttonText, children, onClick }) => {
     return (
-        <div className='p-10 flex-col gap-y-16'>
+        <div className='p-10 flex-col gap-y-16 pt-4'>
 
-            <div className='flex justify-end gap-4'> {/* Added justify-end to align buttons to the right */}
+            <div className='flex justify-end gap-4 pb-3'> {/* Added justify-end to align buttons to the right */}
                 <h1 className="text-3xl font-bold pr-[500px] ">
                     {headerText}
                 </h1>

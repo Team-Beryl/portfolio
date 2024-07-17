@@ -14,6 +14,10 @@ import AddProfile from "./pages/dashboard/pages/addprofile";
 import AddProject from "./pages/dashboard/pages/addproject";
 import AddExperience from "./pages/dashboard/pages/addexperience";
 import AddAcheivement from "./pages/dashboard/pages/addacheivement";
+import Education from "./pages/dashboard/pages/education";
+import Volunteering from "./pages/dashboard/pages/volunteering";
+import AddEducation from "./pages/dashboard/pages/addeducation";
+import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
 
 
 
@@ -60,6 +64,16 @@ function App() {
       element: <Acheivement />
     },
 
+    {
+      path: "dashboard/education",
+      element: <Education />
+    },
+
+    {
+      path: "dashboard/volunteering",
+      element: <Volunteering />
+    },
+
 
     {
       path: "prev",
@@ -97,8 +111,18 @@ function App() {
     },
 
     {
-      path: "dashboard/acheivements/acheivement",
-      element: <AddAcheivement/>
+      path: "dashboard/acheivements/addacheivement",
+      element: <AddAcheivement />
+    },
+
+    {
+      path: "dashboard/volunteering/addvolunteering",
+      element: <AddVolunteering />
+    },
+
+    {
+      path: "dashboard/education/addeducation",
+      element: <AddEducation />
     }
 
 

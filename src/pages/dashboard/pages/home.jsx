@@ -4,6 +4,8 @@ import experienceimg from "../../../images/experienceimg.png";
 import skillimg from "../../../images/skillimg.png";
 import projectimg from "../../../images/projectimg.png";
 import acheiveimg from "../../../images/acheiveimg.png";
+import volun from "../../../images/volun.png"
+import edu from "../../../images/edu.png"
 
 const DashboardHome = () => {
     const navigate = useNavigate();
@@ -62,6 +64,16 @@ const DashboardHome = () => {
                     <img src={acheiveimg} alt="Achievements" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Achievements</span>
                     <p className="text-center mt-2">Your achievements section is where you highlight your standout moments. This section is your opportunity to showcase the impact you've made and the goals you've achieved, making a strong impression on potential employers.</p>
+                </div>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/education")}>
+                    <img src={volun} alt="Achievements" className="w-48 mx-auto" />
+                    <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Education</span>
+                    <p className="text-center mt-2">Your education section is where you showcase the knowledge and skills you've acquired through your academic journey. This section is crucial for demonstrating your foundational expertise and dedication to your field, giving potential employers a clear understanding of your qualifications and readiness for professional challenges.</p>
+                </div>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/volunteering")}>
+                    <img src={edu} alt="Achievements" className="w-48 mx-auto" />
+                    <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Volunteering</span>
+                    <p className="text-center mt-2">Your volunteering section is where you highlight your contributions and commitment to community service. This section is your opportunity to showcase the impact you've made through your volunteer work, demonstrating your dedication to making a difference and your ability to work collaboratively.</p>
                 </div>
             </div>
         </div>

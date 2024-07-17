@@ -11,6 +11,14 @@ import github from "./img/github.png"
 import twitter from "./img/twitter.jpg"
 import emely from "./img/emely.webp"
 import quality from "./img/quality.jpg"
+import left from "./img/left.png"
+import right from "./img/right.png"
+import logo from "./img/logo.png"
+import customize from "./img/customize.webp"
+import share from "./img/share.webp"
+import media from "./img/media.jpg"
+import carbon from "./img/carbon.webp"
+
 
 export{
-    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left,right,logo}
+    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left,right,logo,share, customize, media, carbon}

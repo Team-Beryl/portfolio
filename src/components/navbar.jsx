@@ -5,6 +5,7 @@ import F from "../constants/constants"
 const Navbar = () => {
   return (
     <div className="flex justify-between px-32 fixed w-full top-4">
+
       <img className="w-48 mb-10" src={logo} alt="image" />
       <div className="flex gap-x-12 text-[12px}">
         {
@@ -14,14 +15,8 @@ const Navbar = () => {
             }
           )
         }
-
-
       </div>
-
-
-
-
-
+      
     </div>
   )
 }

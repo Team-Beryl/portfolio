@@ -4,9 +4,13 @@ const LandingPage = () => {
   return (
     <div>
 
+      <div>
+        <img src={} alt="" />
+      <img src= {left} alt="" />
+      </div>
 
 
-        LandingPage
+
     </div>
   )
 }

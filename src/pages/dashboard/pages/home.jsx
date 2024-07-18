@@ -11,9 +11,9 @@ const DashboardHome = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <div className='bg-blue-900 h-20 flex justify-around items-center pl-10 pr-10'>
-                <h3 className='text-white text-2xl'>Portfolio Hub</h3>
-                <button className='h-9 rounded-full text-white hover:bg-white hover:text-blue-500 px-10 shadow-inner' onClick={() => navigate("/sig")}>SIGN OUT</button>
+            <div className='bg-blue-900 h-20 flex justify-around items-center pl-10 pr-10' >
+                <h3 className='text-white text-2xl' onClick={() => navigate("/")} >Portfolio Hub</h3>
+                <button className='h-9 rounded-full text-white hover:bg-white hover:text-blue-500 px-10 shadow-inner' onClick={() => navigate("/signin")}>SIGN OUT</button>
             </div>
 
             <div className="text-center pt-7">
@@ -22,7 +22,7 @@ const DashboardHome = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-10">
-                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/userprofile")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashboard/overview")}>
                     <img src={uploadimg} alt="User Profile" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Overview</span>
                     <p className="text-center mt-2">

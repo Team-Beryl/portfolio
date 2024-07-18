@@ -64,6 +64,10 @@ const AddProfile = () => {
           <input className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="file" />
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="socialmedia">Add Social Media Handle</label>
+          <input className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" />
+        </div>
+        <div className="bg-white p-4 rounded-lg shadow-md">
           <input className="w-full bg-blue-500 text-white px-3 py-2 rounded-lg cursor-pointer" type="submit" value="Submit" />
         </div>
       </form>

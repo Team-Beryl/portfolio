@@ -6,7 +6,7 @@ import ProjectsCard from '../../components/ProjectsCard';
 import ExperienceCard from '../../components/ExperienceCard';
 import VolunteeringCard from '../../components/VolunteeringCard';
 import EducationCard from '../../components/EducationCard';
-import { emely, github, internet, linkedin, twitter } from '../../assets';
+import { emely, github, internet, java, linkedin, ts, twitter } from '../../assets';
 import UserProfileCard from '../../components/UserProfileCard';
 
 const Preview = () => {
@@ -18,15 +18,13 @@ const Preview = () => {
 
   return (
     <div className='flex justify-evenly items-center space-x-[400px] bg-gradient-to-r from-purple-500 to-pink-500 h-screen'>
-      <header className='w-1/2 flex justify-center flex-col fixed top-12 left-16'>
+      <header className='w-1/2 flex justify-center flex-col fixed top-12 left-36'>
 
         <div className=''>
           <UserProfileCard
             img={emely}
             name={"Britanny Chiang"}
             location={"Califonia"}
-            sex={"Female"}
-            dateOfBirth={"3/01/1990"}
             contact={"britchiang23@gmail.com"}
             languages={"English, Spanish"}
             linkedin={"https://www.linkedin.com/in/elsiesebiyam/"}
@@ -115,7 +113,7 @@ const Preview = () => {
       </header>
 
       
-      <div className='flex flex-col w-1/2 overflow-x-auto gap-5'>
+      <div className='flex flex-col w-1/2 overflow-x-auto gap-5 '>
         {visibleCard === 'about' && (
           <div id='about'>
             <AboutCard

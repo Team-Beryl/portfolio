@@ -11,7 +11,12 @@ import github from "./img/github.png"
 import twitter from "./img/twitter.jpg"
 import emely from "./img/emely.webp"
 import quality from "./img/quality.jpg"
+import left from "./img/left.png"
+import node from "./img/node.png"
+import react from "./img/react.png"
+import ts from "./img/ts.jpg"
+import java from "./img/java.jpg"
 
 
 export{
-    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality}
+    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left, java,ts,react,node}

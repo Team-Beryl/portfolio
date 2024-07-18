@@ -15,14 +15,13 @@ const UserProfileCard = ({ img, name, location, sex, dateOfBirth, contact, langu
 
                 </a>
             </div>
+           
             <h2 className=" text-white"> {contact} </h2>
             <p className=" text-white"> {languages} </p>
-            <h1 className=" text-white"> {dateOfBirth} </h1>
             <p className=" text-white"> {location} </p>
-            <p className=" text-white"> {sex} </p>
-
-
-
+            
+           
+          
             <div className='flex gap-3 pt-3 justify-self-auto '>
                 
                 <Link to={twitter} className=' hover:bg-[#000000] w-[45px] shadow-md bg-white rounded-full flex justify-center'> <Twitter className='w-[30px] text-transparent h-10 fill-pink-600 text-center' /> </Link>

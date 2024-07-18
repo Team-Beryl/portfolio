@@ -1,4 +1,5 @@
 import React from 'react'
+import { left } from '../../assets'
 
 const LandingPage = () => {
   return (

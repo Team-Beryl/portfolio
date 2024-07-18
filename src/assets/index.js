@@ -14,11 +14,13 @@ import quality from "./img/quality.jpg"
 import left from "./img/left.png"
 import right from "./img/right.png"
 import logo from "./img/logo.png"
-import customize from "./img/customize.webp"
+import customize from "./img/customize.png"
 import share from "./img/share.webp"
 import media from "./img/media.jpg"
-import carbon from "./img/carbon.webp"
+import pub from "./img/pub.png"
+import lap from "./img/lap.jpg"
+
 
 
 export{
-    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left,right,logo,share, customize, media, carbon}
+    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left,right,logo,share, customize, media, pub , lap}

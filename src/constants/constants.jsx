@@ -301,6 +301,28 @@ const F = {
             image: award 
         }
 
+    ],
+
+
+    NAV: [
+        {
+            name: "Home",
+            path: "/"
+        },
+       
+        {
+            name: "SignUp",
+            path: "/signup"
+        },
+        {
+            name: "SignIn",
+            path: "/signin"
+        }
+
+
+
+
+
     ]
 }
 

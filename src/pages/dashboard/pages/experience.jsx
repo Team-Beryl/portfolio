@@ -1,11 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PagesLayout from '../layout/pageslayout'
 import F from '../../../constants/constants'
 import { Edit, Trash2Icon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import {apiDeleteExperience, apiGetExperiences} from "../../../services/experiences"
+import Loader from '../../../components/loader'
+
 
 const Experience = () => {
-  const navigate = useNavigate()
+const navigate = useNavigate()
+
+const [experiences, setExperiences] = useState([])
+  const [isLoading, setIsLoading] = useState([])
+  const [isDeleting, setIsDeleting] = useState([])
+
+  const fetchExperiences= async () => {
+    setIsLoading(true)
+    try {
+
+      const res = await apiGetExperiences()
+      console.log(res.data)
+      setExperiences(res.data.experience)
+
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleDelete = async(_id) => {
+    try {
+      const res = await apiDeleteExperience(_id)
+      console.log(res.data)
+      toast.success(res.data.message)
+    } catch (error) {
+      console.log(error)
+      toast.error("An error occured")
+      
+    }
+  }
+
+  useEffect(() => {
+    fetchExperiences()
+  }, [])
+
   return (
     <div className='space-y-10'>
       <PagesLayout headerText="Experience" buttonDashboard="Back to Dashboard" buttonText="Add Experience" onClick={() => navigate("/dashboard/experiences/addexperience")}>
@@ -19,13 +58,15 @@ const Experience = () => {
                 <span className='pt-8 font-semibold'>{experience.date}</span>
                 <span className='pt-4 font-semibold'>{experience.location}</span>
 
-                <div className='ml-auto flex gap-x-2 mt-auto'>
-                  <span>
+                <div className='ml-auto flex gap-x-2'>
+                  <button>
                     <Edit className='text-blue-500' />
-                  </span>
-                  <span>
-                    <Trash2Icon className='text-red-500' />
-                  </span>
+                  </button>
+                  <button className='text-red-500' onClick={() => handleDelete(experience._id)}>
+                    {
+                      isDeleting ? <Loader/> : <Trash2Icon />
+                    }
+                  </button>
                 </div>
               </div>
             ))

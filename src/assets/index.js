@@ -20,7 +20,5 @@ import media from "./img/media.jpg"
 import pub from "./img/pub.png"
 import lap from "./img/lap.jpg"
 
-
-
 export{
     waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left,right,logo,share, customize, media, pub , lap}

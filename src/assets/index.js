@@ -16,7 +16,8 @@ import node from "./img/node.png"
 import react from "./img/react.png"
 import ts from "./img/ts.jpg"
 import java from "./img/java.jpg"
+import right from "./img/right.png"
 
 
 export{
-    waves, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left, java,ts,react,node}
+    waves, right, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left, java,ts,react,node}

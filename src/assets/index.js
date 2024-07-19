@@ -18,6 +18,8 @@ import ts from "./img/ts.jpg"
 import java from "./img/java.jpg"
 import right from "./img/right.png"
 
-
 export{
+
     waves, right, image, background,google,login3,laptop,internet,web,linkedin,github,twitter,emely,quality,left, java,ts,react,node}
+
+  

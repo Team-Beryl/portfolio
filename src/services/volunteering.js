@@ -1,7 +1,7 @@
 import { apiClient } from "./config"
 
-export const apiAddVolunteering = async() => {
-    return apiClient.post("/volunteering")
+export const apiAddVolunteering = async(payload) => {
+    return apiClient.post("/volunteering", payload)
 }
 
 export const apiGetVolunteering = async() => {

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import PagesLayout from '../layout/pageslayout'
-import F from '../../../constants/constants'
 import { Edit, Trash2Icon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { apiDeleteSkill, apiGetSkills } from '../../../services/skills'
 import PageLoader from '../../../components/PageLoader'
-import empty from "../../../images/empty.png"
 import { toast } from 'react-toastify'
 import Loader from '../../../components/loader'
 

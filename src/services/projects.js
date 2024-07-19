@@ -1,6 +1,6 @@
 import { apiClient } from "./config"
 
-export const apiAddProjects = async() => {
+export const apiAddProject = async(payload) => {
     return apiClient.post("/projects", payload)
 }
 

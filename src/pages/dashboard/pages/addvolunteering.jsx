@@ -23,7 +23,15 @@ const AddVolunteering = () => {
       <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">End Date</label>
       <input type="date" id="endDate" className="mt-1 block w-full p-2 border border-gray-300 rounded" />
 
-      <input type="submit" value="Submit" className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer" />
+      <button
+          type="submit"
+          className="w-full flex justify-center bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+        >
+        
+          {
+            isSubmitting? <Loader/> : "Add Skill"
+          }
+        </button>
 
     </form>
   </div>

@@ -1,6 +1,6 @@
 import { apiClient } from "./config"
 
-export const apiAddEducation = async() => {
+export const apiAddEducation = async(payload) => {
     return apiClient.post("/education", payload)
 }
 

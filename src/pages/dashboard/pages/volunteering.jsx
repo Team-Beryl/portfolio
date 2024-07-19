@@ -25,14 +25,16 @@ const Volunteering = () => {
                   <span>{volunteering.description}</span>
                   <span className='font-semibold'>{volunteering.startDate}</span>
                   <span className='font-semibold'>{volunteering.endDate}</span>
- 
-                  <div className='ml-auto flex gap-x-2 mt-auto pb-4 pr-3'>
-                    <span>
+
+                  <div className='ml-auto flex gap-x-2'>
+                    <button>
                       <Edit className='text-blue-500' />
-                    </span>
-                    <span>
-                      <Trash2Icon className='text-red-500' />
-                    </span>
+                    </button>
+                    <button className='text-red-500' onClick={() => handleDelete(skill._id)}>
+                      {
+                        isDeleting ? <Loader /> : <Trash2Icon />
+                      }
+                    </button>
                   </div>
                 </div>
 

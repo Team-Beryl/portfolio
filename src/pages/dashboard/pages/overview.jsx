@@ -74,8 +74,8 @@ const OverView = () => {
         <div>
         <PagesLayout
           headerText="Overview"
-          buttonDashboard="Back to Dashboard"
-          onClick={() => navigate("/dashboard")}
+          buttonDashboard="Preview Page"
+          onClick={() => navigate("/prev")}
         >
           <div className="bg-gray-100 min-h-screen p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-14">

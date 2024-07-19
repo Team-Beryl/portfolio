@@ -1,7 +1,7 @@
 import { apiClient } from "./config"
 
 
-export const apiAddAcheivement = async() => {
+export const apiAddAcheivement = async(payload) => {
     return apiClient.post("/acheivements", payload)
 }
 

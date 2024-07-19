@@ -1,9 +1,12 @@
-const SkillsCard = ({ image, name, name1, name2, levelOfProficiency, levelOfProficiency1, levelOfProficiency2 }) => {
+const SkillsCard = ({ image, image1, image3, image2, name, name1, name2, levelOfProficiency, levelOfProficiency1, levelOfProficiency2 }) => {
   return (
     <div className="flex flex-col items-center justify-center h-screen w-full shadow-2xl">
 
-      <span className="mb-8 -mt-4">
-       <img src={image} alt="img" />
+      <span className="mb-8 flex gap-3 -mt-4">
+       <img className="w-20" src={image} alt="img" />
+       <img className="w-20"  src={image1} alt="" />
+       <img className="w-20"  src={image2} alt="" />
+       
       </span>
 
       <div className="flex justify-center items-start space-x-10">

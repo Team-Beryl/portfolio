@@ -6,7 +6,7 @@ import ProjectsCard from '../../components/ProjectsCard';
 import ExperienceCard from '../../components/ExperienceCard';
 import VolunteeringCard from '../../components/VolunteeringCard';
 import EducationCard from '../../components/EducationCard';
-import { emely, github, internet, java, linkedin, ts, twitter } from '../../assets';
+import { emely, github, internet, java, linkedin, node, react, ts, twitter } from '../../assets';
 import UserProfileCard from '../../components/UserProfileCard';
 
 const Preview = () => {
@@ -18,13 +18,13 @@ const Preview = () => {
 
   return (
     <div className='flex justify-evenly items-center space-x-[400px] bg-gradient-to-r from-purple-500 to-pink-500 h-screen'>
-      <header className='w-1/2 flex justify-center flex-col fixed top-12 left-36'>
+      <header className='w-1/2 flex justify-center h-screen flex-col fixed top-8 left-48'>
 
         <div className=''>
           <UserProfileCard
             img={emely}
             name={"Britanny Chiang"}
-            location={"Califonia"}
+            location={"California"}
             contact={"britchiang23@gmail.com"}
             languages={"English, Spanish"}
             linkedin={"https://www.linkedin.com/in/elsiesebiyam/"}
@@ -104,7 +104,7 @@ const Preview = () => {
                 onClick={() => handleLinkClick('volunteering')}
               >
                 <span className='mr-4 h-px w-8 bg-slate-200 transition-all group-hover:w-16 group-hover:bg-slate-600 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none'></span>
-                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-white group-focus-visible:text-white'>Volunteer</span>
+                <span className='text-xs font-bold uppercase tracking-widest  text-white group-hover:text-white group-focus-visible:text-white'>Volunteering</span>
               </a>
             </li>
           </ul>
@@ -117,6 +117,7 @@ const Preview = () => {
         {visibleCard === 'about' && (
           <div id='about'>
             <AboutCard
+              title={"About"}
               description={"Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I've had the privilege of building software for an advertising agency, a start-up, a huge corporation, and a digital product studio."}
 
 
@@ -126,6 +127,10 @@ const Preview = () => {
         {visibleCard === 'skills' && (
           <div id='skills'>
             <SkillsCard
+              image={java}
+              image2={node}
+              
+              image1={react}
               name={"JavaScript"}
               levelOfProficiency={"Advanced"}
               name1={"React"}
@@ -138,6 +143,7 @@ const Preview = () => {
         {visibleCard === 'achievement' && (
           <div id='achievement'>
             <AchievementCard
+              title={"Achievements"}
               award={"Best UI/UX Design"}
               description={"Awarded for exceptional user interface and user experience design skills. Describe the projects or features that led to winning the award, focusing on design principles, usability improvements, and visual aesthetics."}
               image={internet}
@@ -146,7 +152,7 @@ const Preview = () => {
           </div>
         )}
         {visibleCard === 'projects' && (
-          <div id='projects' className='grid grid-col-2 gap-5'>
+          <div id='projects' className='flex flex-col gap-10 overflow-auto'>
             <ProjectsCard
               name={"Halycon Theme"}
               description={"Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more"}
@@ -174,6 +180,8 @@ const Preview = () => {
         {visibleCard === 'experience' && (
           <div id='experience'>
             <ExperienceCard
+
+              header={"Experiences"}
               title={"Senior Frontend Engineer, Accessibility.Klaviyo"}
               role={"Engineer"}
               responsibility={"Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility."}
@@ -188,6 +196,7 @@ const Preview = () => {
         {visibleCard === 'education' && (
           <div id='education'>
             <EducationCard
+            title={"Education"}
               schoolName={"University of Leicester"}
               program={"Bachelor of Science in Computer Science"}
               qualification={"BSc"}
@@ -201,6 +210,7 @@ const Preview = () => {
         {visibleCard === 'volunteering' && (
           <div id='volunteering'>
             <VolunteeringCard
+            title={"Volunteering"}
               organization={"Red Cross"}
               description={"The Red Cross is a humanitarian organization that provides emergency assistance, disaster relief, and education in the United States."}
               skills={"HTML"}

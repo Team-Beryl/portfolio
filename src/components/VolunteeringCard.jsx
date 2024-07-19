@@ -1,14 +1,12 @@
 
 
-const VolunteeringCard = ({ organization, description, skills, skills1, skills2, startDate, endDate, location, role, responsibility, projectName }) => {
+const VolunteeringCard = ({title, organization, description, skills, skills1, skills2, startDate, endDate, location, role, responsibility, projectName }) => {
   return (
-    <div className=" h-screen text-white flex justify-center items-center  w-[60] shadow-2xl  pl-24 " >
+    <div className=" h-screen text-white flex justify-center items-center overflow-x-auto w-[60] shadow-2xl  pl-24 " >
 
       <div className="flex gap-6">
-
-
-
         <div className="flex flex-col w-96 gap-2">
+          <h1 className="text-[20px] text-cyan-400 font-semibold text-center mb-7">{title}</h1>
           <h1 className="text-cyan-400 font-semibold text-[20px]">{organization}</h1>
           <p>{description}</p>
           <p>{location}</p>

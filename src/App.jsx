@@ -18,6 +18,7 @@ import Education from "./pages/dashboard/pages/education";
 import Volunteering from "./pages/dashboard/pages/volunteering";
 import AddEducation from "./pages/dashboard/pages/addeducation";
 import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
+import OverView from "./pages/dashboard/pages/overview";
 
 
 
@@ -38,6 +39,8 @@ function App() {
       path: "dashboard",
       element: <DashboardHome />
     },
+
+
     {
       path: "dashboard/profile",
       element: <UserProfile />
@@ -73,10 +76,15 @@ function App() {
     },
 
     {
+      path: "dashboard/overview",
+      element: <OverView />
+    },
+
+    {
       path: "prev",
       element: <Preview />
     },
-  
+
 
     {
       path: "signup",

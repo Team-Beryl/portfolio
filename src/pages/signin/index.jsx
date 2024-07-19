@@ -23,9 +23,11 @@ const Signin = () => {
         password: data.password,
       });
       console.log("Response", res.data)
-      toast.success(res.data)
+
+      toast.success(res.data.message)
+      localStorage.setItem("accessToken", res.data.accessToken)
       setTimeout(() => {
-        navigate("/dash");
+        navigate("/dashboard");
       },2000)
       // redirect user to dashboard
       

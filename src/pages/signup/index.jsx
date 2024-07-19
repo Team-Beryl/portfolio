@@ -9,6 +9,7 @@ import Loader from "../../components/loader";
 import { debounce } from "lodash";
 
 const SignUp = () => {
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [usernameAvailable, setIsUsernameAvailable] = useState(false);
   const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
@@ -90,7 +91,7 @@ const SignUp = () => {
       toast.success(res.data);
 
       setTimeout(() => {
-        navigate("/sig")
+        navigate("/signin")
       }, 2000)
 
     } catch (error) {
@@ -235,7 +236,7 @@ const SignUp = () => {
 
           <div className="container signin text-center pt-3">
             <p className="text-sm">
-              Already have an account? <a href="#" className="text-blue-600" onClick={() => navigate("/sig")}>Sign in</a>.
+              Already have an account? <a href="#" className="text-blue-600" onClick={() => navigate("/signin")}>Sign in</a>.
             </p>
           </div>
         </form>

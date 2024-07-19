@@ -292,6 +292,24 @@ const F = {
 
     ],
 
+
+
+    NAV: [
+        {
+            name: "Home",
+            path: "/"
+        },
+       
+        {
+            name: "SignUp",
+            path: "/signup"
+        },
+        {
+            name: "SignIn",
+            path: "/signin"
+        }
+
+
     OVERVIEW: [
 
         {
@@ -324,6 +342,7 @@ const F = {
             total : "10",
             icon: <HeartHandshake/>
         },
+
 
     ]
 }

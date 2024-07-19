@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../../components/loader";
+import { HomeIcon } from "lucide-react";
 
 const Signin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,6 +46,10 @@ const Signin = () => {
   return (
     <div className="flex">
   <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
+    <div onClick={() => navigate('/') } className="pb-10">
+    <HomeIcon className=""/>
+    </div>
+         
         <div className="pb-7 font-sans text-center">
           <h1 className="text-4xl font-bold">Where did you go?</h1>
           <p className="text-2xl">Let's get you back in</p>

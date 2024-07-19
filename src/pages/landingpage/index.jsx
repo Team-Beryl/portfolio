@@ -3,10 +3,9 @@ import { customize, lap, left, pub, right } from "../../assets";
 
 const LandingPage = () => {
   return (
-    <div className="">
-
-      <div className='w-[100vw] overflow-hidden '>
-        <div className="flex  relative h-fit  resize-y">
+    <div className="w-full h-full overflow-x-hidden">
+      <div className='w-[100vw]'>
+        <div className="flex relative h-fit">
           <img className="w-2/4" src={left} alt="image" />
           <img className="w-2/4" src={right} alt="image" />
         </div>
@@ -20,7 +19,6 @@ const LandingPage = () => {
       <h1 className="text-4xl text-center font-bold text-purple-600 pt-6">Portfolio Features</h1>
 
       <div className="flex justify-center items-center gap-48 pt-14">
-
         <div>
           <h1 className="text-[#3461C9] text-3xl font-medium pb-4">Customize your Portfolio</h1>
           <p className="flex flex-col justify-center text-[#273E5D] text-[18px] gap-7">
@@ -47,7 +45,6 @@ const LandingPage = () => {
         backgroundSize: 'cover',
         position: 'relative'
       }}>
-
         <div style={{
           position: 'absolute',
           top: 0,
@@ -58,11 +55,8 @@ const LandingPage = () => {
           opacity: '0.9',
           zIndex: 1,
         }} className="flex flex-col justify-center items-center">
-
           <h1 className="font-medium text-white text-3xl flex justify-center items-center">How to create a portfolio</h1>
-
           <div className="grid grid-cols-2 gap-1">
-
             <div className="flex justify-center items-center gap-7">
               <h2 className="text-white border-2 text-center text-3xl rounded-full w-14">1</h2>
               <div className="pt-24 flex flex-col gap-4">
@@ -72,7 +66,6 @@ const LandingPage = () => {
                 </p>
               </div>
             </div>
-
             <div className="flex justify-center items-center gap-7">
               <h2 className="text-white border-2 text-center text-3xl rounded-full w-14">2</h2>
               <div className="pt-24 flex flex-col gap-4">
@@ -80,7 +73,6 @@ const LandingPage = () => {
                 <p className="text-white text-[16px] font-semibold">Highlight your skills and achievements with detailed <br /> project descriptions, high-quality images, and links <br /> to live examples or code repositories. Add engaging <br /> sections like achievements, skills, and so on.</p>
               </div>
             </div>
-
             <div className="flex justify-center items-center gap-7">
               <h2 className="text-white border-2 text-center text-3xl rounded-full w-14">3</h2>
               <div className="pt-14 flex flex-col gap-4">
@@ -90,10 +82,7 @@ const LandingPage = () => {
                 </p>
               </div>
             </div>
-
-            
           </div>
-
         </div>
       </div>
     </div>

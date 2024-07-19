@@ -7,6 +7,7 @@ import { apiCheckUsernameExist, apiSignUp } from "../../services/auth";
 import { toast } from "react-toastify";
 import Loader from "../../components/loader";
 import { debounce } from "lodash";
+import { HomeIcon } from "lucide-react";
 
 const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -105,6 +106,9 @@ const SignUp = () => {
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
 
       <div className="bg-[#EE219A] md:w-1/2 flex flex-col justify-center py-16 md:py-32 px-8 md:px-16 -mt-14">
+      <div onClick={() => navigate('/') } className="pb-10 flex justify-center items-center">
+        <HomeIcon/>
+    </div>
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">Join Portfolio Hub</h1>
         <p className="text-white text-center mb-8 text-lg">
           and showcase your skills, projects, and creativity to the world. A well-crafted portfolio is an essential tool for any developer, helping you stand out in the competitive tech industry.

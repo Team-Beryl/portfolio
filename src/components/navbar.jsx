@@ -5,7 +5,7 @@ import F from "../constants/constants";
 const Navbar = () => {
   return (
     <div className="flex justify-between px-32 py-8 fixed w-full left-0 top-0 z-50 bg-white bg-opacity-90">
-      <img className="w-56 mb-0 animate-bounce" src={logo} alt="logo" />
+      <img className="w-60 mb-0 animate-bounce" src={logo} alt="logo" />
 
       <div className="flex gap-x-12 text-[18px] font-semibold text-black">
         {F.NAV.map((item, index) => {

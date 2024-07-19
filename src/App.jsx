@@ -18,7 +18,7 @@ import Education from "./pages/dashboard/pages/education";
 import Volunteering from "./pages/dashboard/pages/volunteering";
 import AddEducation from "./pages/dashboard/pages/addeducation";
 import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
-import Rootlayout from "./layout/rootLayout/";
+import Rootlayout from "./layout/rootlayout";
 
 
 

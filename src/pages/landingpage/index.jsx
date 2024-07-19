@@ -1,9 +1,9 @@
 
+
 import React from 'react';
 import { customize, lap, left, pub, right } from "../../assets";
 
 import { left} from "../../assets"
-
 
 const LandingPage = () => {
   return (
@@ -24,6 +24,9 @@ const LandingPage = () => {
 
       <div className="flex justify-center items-center gap-48 pt-14">
         <div>
+
+      <img src= {left} alt="" />
+
           <h1 className="text-[#3461C9] text-3xl font-medium pb-4">Customize your Portfolio</h1>
           <p className="flex flex-col justify-center text-[#273E5D] text-[18px] gap-7">
             Highlight your skills and achievements with detailed <br /> project descriptions, high-quality images, and links <br /> to live examples or code repositories. Add engaging sections <br /> like an "About Me" page and a contact form. <br /> Regularly update your portfolio to reflect new <br /> accomplishments and keep the content fresh.
@@ -87,10 +90,12 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-        </div>
+             </div>
       </div>
     </div>
   );
 }
 
 export default LandingPage;
+
+     

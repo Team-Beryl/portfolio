@@ -3,7 +3,7 @@
 import React from 'react';
 import { customize, lap, left, pub, right } from "../../assets";
 
-import { left} from "../../assets"
+
 
 const LandingPage = () => {
   return (
@@ -25,7 +25,7 @@ const LandingPage = () => {
       <div className="flex justify-center items-center gap-48 pt-14">
         <div>
 
-      <img src= {left} alt="" />
+    
 
           <h1 className="text-[#3461C9] text-3xl font-medium pb-4">Customize your Portfolio</h1>
           <p className="flex flex-col justify-center text-[#273E5D] text-[18px] gap-7">

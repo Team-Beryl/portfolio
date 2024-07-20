@@ -17,7 +17,7 @@ import react from "./img/react.png"
 import ts from "./img/ts.jpg"
 import java from "./img/java.jpg"
 import right from "./img/right.png"
-import right from "./img/right.png"
+
 import logo from "./img/logo.png"
 import customize from "./img/customize.png"
 import share from "./img/share.webp"

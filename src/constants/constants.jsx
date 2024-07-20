@@ -1,4 +1,4 @@
-import { DivideSquareIcon } from "lucide-react"
+import { ArchiveIcon, ArchiveRestore, Award, Badge, BadgeCheck, BadgeIcon, Book, BookA, Briefcase, DivideSquareIcon, ExpandIcon, GraduationCap, HeartHandshake, ProjectorIcon, School, Settings, SkipForward, Volume1Icon } from "lucide-react"
 
 import award from "../images/award.jpg"
 
@@ -80,8 +80,16 @@ const F = {
             title: "Tools & Platforms",
             name: "Git, GitHub, Netlify, Vercel, Heroku,WordPress,Algolia, Firebase",
 
+            levelofProficiency: "Advance"
+        },
+        
+        {
+            title: "Libraries & FRameworks",
+            name: "React, Next.js, Gatsby, Eleventy, Node.js,React,Tailwind CSS, Styled Componenrs",
+
             levelofProficiency: "Intermediate"
         },
+
         {
 
             title: "Tools & Platforms",
@@ -89,27 +97,8 @@ const F = {
 
             levelofProficiency: "Advance"
         },
-        {
-
-            title: "Tools & Platforms",
-            name: "Git, GitHub, Netlify, Vercel, Heroku,WordPress,Algolia, Firebase",
-
-            levelofProficiency: "Intermediate"
-        },
-        {
-
-            title: "Tools & Platforms",
-            name: "Git, GitHub, Netlify, Vercel, Heroku,WordPress,Algolia, Firebase",
-
-            levelofProficiency: "Advance"
-        },
-        {
-
-            title: "Tools & Platforms",
-            name: "Git, GitHub, Netlify, Vercel, Heroku,WordPress,Algolia, Firebase",
-
-            levelofProficiency: "Intermediate"
-        },
+        
+       
     ],
 
     PROJECTS: [
@@ -304,6 +293,7 @@ const F = {
     ],
 
 
+
     NAV: [
         {
             name: "Home",
@@ -318,9 +308,40 @@ const F = {
             name: "SignIn",
             path: "/signin"
         }
+    ],
 
+    OVERVIEW: [
 
-
+        {
+            title: "Skills",
+            total : "22",
+            icon: <Book/>
+        },
+        {
+            title: "Projects",
+            total : "6",
+            icon: <ProjectorIcon/>
+        },
+        {
+            title: "Experiences",
+            total : "10",
+            icon: <Briefcase/>
+        },
+        {
+            title: "Acheivements",
+            total : "15",
+            icon: <Award/>
+        },
+        {
+            title: "Education",
+            total : "6",
+            icon: <GraduationCap/>
+        },
+        {
+            title: "Volunteering",
+            total : "10",
+            icon: <HeartHandshake/>
+        },
 
 
     ]

@@ -19,6 +19,8 @@ import Volunteering from "./pages/dashboard/pages/volunteering";
 import AddEducation from "./pages/dashboard/pages/addeducation";
 import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
 import Rootlayout from "./layout/rootlayout";
+import OverView from "./pages/dashboard/pages/overview";
+
 
 
 
@@ -55,6 +57,8 @@ function App() {
       path: "dashboard",
       element: <DashboardHome />
     },
+
+
     {
       path: "dashboard/profile",
       element: <UserProfile />
@@ -87,6 +91,11 @@ function App() {
     {
       path: "dashboard/volunteering",
       element: <Volunteering />
+    },
+
+    {
+      path: "dashboard/overview",
+      element: <OverView />
     },
 
     {

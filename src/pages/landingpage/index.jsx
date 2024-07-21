@@ -3,8 +3,6 @@
 import React from 'react';
 import { customize, lap, left, pub, right } from "../../assets";
 
-import { left} from "../../assets"
-
 const LandingPage = () => {
   return (
     <div className="w-full h-full overflow-x-hidden">

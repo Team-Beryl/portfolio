@@ -1,18 +1,15 @@
 import { ArrowUpRight } from "lucide-react"
 
 
-const ExperienceCard = ({title, role, responsibility, location,Date,  skills, skills3, skills4}) => {
+const ExperienceCard = ({header,title, role, responsibility, location,Date,  skills, skills3, skills4}) => {
   return (
     <div  className=" text-white flex justify-center items-center  h-screen  shadow-2xl pl-24">
 
       <div className=" gap-6">
 
-      <div>
-        
-      </div>
-
       <div className="flex flex-col w-96 gap-1">
-      <h1 className="text-cyan-400 font-bold "> {title} </h1>
+        <h1 className="text-[20px] text-cyan-400 font-semibold text-center mb-7"> {header} </h1>
+      <h2 className="text-cyan-400 font-bold "> {title} </h2>
        <p className="text-cyan-400 font-semibold"> {role} </p>
        <h4>{Date}</h4>
        <p>{responsibility}</p>

@@ -313,34 +313,34 @@ const F = {
     OVERVIEW: [
 
         {
-            title: "Skills",
-            total : "22",
-            icon: <Book/>
+            id : "skills",
+            icon: <Book/>,
+            text: "Skills",
         },
         {
-            title: "Projects",
-            total : "6",
-            icon: <ProjectorIcon/>
+            id : "projects",
+            icon: <ProjectorIcon/>,
+            text: "Projects",
         },
         {
-            title: "Experiences",
-            total : "10",
-            icon: <Briefcase/>
+            id : "experiences",
+            icon: <Briefcase/>,
+            text: "Experiences",
         },
         {
-            title: "Acheivements",
-            total : "15",
-            icon: <Award/>
+            id : "achievements",
+            icon: <Award/>,
+            text: "Acheivements",
         },
         {
-            title: "Education",
-            total : "6",
-            icon: <GraduationCap/>
+            id : "education",
+            icon: <GraduationCap/>,
+            text: "Education",
         },
         {
-            title: "Volunteering",
-            total : "10",
-            icon: <HeartHandshake/>
+            id: "10",
+            icon: <HeartHandshake/>,
+            text : "Volunteering",
         },
 
 

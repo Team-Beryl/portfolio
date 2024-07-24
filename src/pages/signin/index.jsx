@@ -12,7 +12,7 @@ const Signin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate()
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -24,21 +24,15 @@ const Signin = () => {
         password: data.password,
       });
       console.log("Response", res.data)
-
-      toast.success(res.data.message)
       localStorage.setItem("accessToken", res.data.accessToken)
-      setTimeout(() => {
-        navigate("/dashboard");
-      },2000)
-      // redirect user to dashboard
-      
 
+      toast.success(res.data.message);
+        navigate("/dashboard");
+      
     } catch (error) {
       console.log(error)
       toast.error("An error occured!")
-
-    }
-    finally {
+    } finally {
       setIsSubmitting(false)
     }
   };

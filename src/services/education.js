@@ -9,8 +9,12 @@ export const apiGetEducation = async() => {
     return apiClient.get("/education")
 }
 
-export const apiUpdateEducation = async() => {
-    return apiClient.patch(`/education/${id}`)
+export const apiGetEducationById = async(id) => {
+    return apiClient.get(`/education/${id}`)
+}
+
+export const apiUpdateEducation = async(id, payload) => {
+    return apiClient.patch(`/education/${id}`, payload)
 }
 
 export const apiDeleteEducation = async() => {

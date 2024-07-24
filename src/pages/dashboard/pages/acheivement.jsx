@@ -52,6 +52,10 @@ const Acheivement = () => {
 
   return (
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4f8823a92f0fb7297d96a76fd4c177c8ca4a8f50
 
     <div>
       <PagesLayout headerText="Acheivements" buttonDashboard="Back to Dashboard" buttonText="Add Acheivement" onClick={() => navigate("/dashboard/acheivements/addacheivement")}>

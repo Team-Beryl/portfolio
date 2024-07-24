@@ -39,7 +39,8 @@ const AddSkill = () => {
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2">Skill Name</label>
           <input
-            type="text"
+            type="name"
+            id='name'
             {...register("name", { required: "Skill name is required" })}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
             placeholder="Enter a skill"
@@ -49,6 +50,7 @@ const AddSkill = () => {
 
         <div className="mb-6">
           <label className="block text-gray-700 font-bold mb-2">Proficiency</label>
+          
           <select
             {...register("proficiency", { required: "Proficiency is required" })}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -59,7 +61,7 @@ const AddSkill = () => {
             <option>Advanced</option>
             <option>Expert</option>
           </select>
-          {errors.proficiency && <p className="text-red-500 text-sm mt-2">{errors.proficiency.message}</p>}
+          {errors.proficiency && ( <p className="text-red-500 text-sm mt-2">{errors.proficiency.message}</p>)}
         </div>
 
         <button

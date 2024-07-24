@@ -16,7 +16,7 @@ const SignUp = () => {
   const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
   const [isUsernameLoading, setIsUsernameLoading] = useState(false)
   const navigate = useNavigate();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
 
   const checkUserName = async (userName) => {
     
@@ -39,7 +39,7 @@ const SignUp = () => {
 
     } catch (error) {
       console.log(error)
-      toast.error(error.message)
+      toast.error("An error occured")
 
     } finally {
       setIsUsernameLoading(false)
@@ -51,14 +51,13 @@ const SignUp = () => {
 
 
   const userNameWatch = watch("userName")
-  console.log(userNameWatch);
-
+  
   useEffect(() => {
     const debouncedSearch = debounce(async() => {
       if (userNameWatch) {
-        await checkUserName(userNameWatch)
+        await checkUserName(userNameWatch);
       }
-    }, 1000)
+    }, 1000);
 
     debouncedSearch()
 
@@ -89,11 +88,9 @@ const SignUp = () => {
     try {
       const res = await apiSignUp(payload);
       console.log(res.data);
-      toast.success(res.data);
 
-      setTimeout(() => {
-        navigate("/signin")
-      }, 2000)
+      toast.success(res.data.message);
+      navigate("/signin")
 
     } catch (error) {
       console.log(error)
@@ -201,8 +198,8 @@ const SignUp = () => {
               type="password"
               placeholder="Password"
               className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" } })}
-              aria-invalid={errors.password ? "true" : "false"}
+              {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" }
+               })}
             />
             {errors.password && (<p className="text-red-500 text-sm mt-1">{errors.password.message}</p>)}
           </div>

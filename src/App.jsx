@@ -56,7 +56,7 @@ function App() {
       element: <DashboardLayout />,
       children: [
         {
-          index: true,
+          index: "dashboard",
           element: <DashboardHome />
         },
 

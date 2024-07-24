@@ -10,45 +10,45 @@ const F = {
         {
 
             text: "UserProfile",
-            link: "/dash"
+            link: "/dashboard"
         },
 
         {
 
             text: "About",
-            link: "/dash/about"
+            link: "/dashboard/about"
         },
 
         {
 
             text: "Skills",
-            link: "/dash/skills"
+            link: "/dashboard/skills"
         },
 
         {
 
             text: "Experience",
-            link: "/dash/experience"
+            link: "/dashboard/experience"
 
         },
 
         {
 
             text: "Projects",
-            link: "/dash/projects"
+            link: "/dashboard/projects"
 
         },
 
         {
 
             text: "Acheivement",
-            link: "/dash/acheive"
+            link: "/dashboard/acheive"
         },
 
         {
 
             text: "Social Media",
-            link: "/dash/social"
+            link: "/dashbaord/social"
         }
 
 

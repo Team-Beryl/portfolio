@@ -7,6 +7,7 @@ import Skills from "./pages/dashboard/pages/skills";
 import Projects from "./pages/dashboard/pages/projects";
 import Experience from "./pages/dashboard/pages/experience";
 import Acheivement from "./pages/dashboard/pages/acheivement";
+import AuthLayout from "./pages/dashboard/layout/authlayout";
 import UserProfile from "./pages/dashboard/pages/userprofile";
 import DashboardHome from "./pages/dashboard/pages/home";
 import AddSkill from "./pages/dashboard/pages/addSkill";
@@ -25,8 +26,6 @@ import DashboardLayout from "./pages/dashboard/layout/dashboardLayout";
 
 function App() {
   const router = createBrowserRouter([
-
-
     {
       path: "/",
       element: <Rootlayout/>,
@@ -141,7 +140,22 @@ function App() {
       path: "prev",
       element: <Preview />
     },
+      
+{
+  element: <AuthLayout/>,
+  children: [
+{
+  path: "signin",
+  element: <Signin/>
+},
 
+{
+  path: "signup",
+  element: <SignUp/>
+}
+
+  ]
+}
 
     {
       path: "prev/ :username",
@@ -164,6 +178,7 @@ function App() {
   return (
     <RouterProvider router={router} />
   )
+
 }
 
 export default App;

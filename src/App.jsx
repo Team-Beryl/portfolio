@@ -12,6 +12,7 @@ import Experience from "./pages/dashboard/pages/experience";
 import About from "./pages/dashboard/pages/about";
 import SocialMedia from "./pages/dashboard/pages/socialmedia";
 import Acheivement from "./pages/dashboard/pages/acheivement";
+import AuthLayout from "./pages/dashboard/layout/authlayout";
 
 function App () {
   const router = createBrowserRouter ([
@@ -75,9 +76,28 @@ function App () {
 {
   path: "sig",
   element: <Signin/>
+},
+
+{
+  element: <AuthLayout/>,
+  children: [
+{
+  path: "signin",
+  element: <Signin/>
+},
+
+{
+  path: "signup",
+  element: <SignUp/>
+}
+
+  ]
 }
 
   ])
+
+
+
 
 
 return (

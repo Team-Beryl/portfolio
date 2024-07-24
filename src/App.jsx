@@ -18,18 +18,36 @@ import Education from "./pages/dashboard/pages/education";
 import Volunteering from "./pages/dashboard/pages/volunteering";
 import AddEducation from "./pages/dashboard/pages/addeducation";
 import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
+import Rootlayout from "./layout/rootlayout";
 import OverView from "./pages/dashboard/pages/overview";
 import { apiGetUserDetails } from "./services/preview";
 import DashboardLayout from "./pages/dashboard/layout/dashboardLayout";
 
-
-
 function App() {
   const router = createBrowserRouter([
+
+
     {
       path: "/",
-      element: <LandingPage />
+      element: <Rootlayout/>,
+      children: [
+        {
+          index: true,
+          element: <LandingPage/>
+        },
 
+      
+      ]
+
+    },
+    {
+      path: "signup",
+      element: <SignUp />
+    },
+
+    {
+      path: "signin",
+      element: <Signin />
     },
 
 
@@ -118,26 +136,12 @@ function App() {
     ]
   },
 
-   
-
-
-   
-
+  
     {
       path: "prev",
       element: <Preview />
     },
 
-
-    {
-      path: "signup",
-      element: <SignUp />
-    },
-
-    {
-      path: "signin",
-      element: <Signin />
-    },
 
     {
       path: "prev/ :username",
@@ -156,6 +160,7 @@ function App() {
     },
 
   ]);
+
   return (
     <RouterProvider router={router} />
   )

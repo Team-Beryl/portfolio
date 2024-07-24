@@ -51,6 +51,9 @@ const Acheivement = () => {
 
 
   return (
+
+
+
     <div>
       <PagesLayout headerText="Acheivements" buttonDashboard="Back to Dashboard" buttonText="Add Acheivement" onClick={() => navigate("/dashboard/acheivements/addacheivement")}>
 
@@ -87,6 +90,7 @@ const Acheivement = () => {
         }
       </PagesLayout>
     </div>
+
 
   )
 }

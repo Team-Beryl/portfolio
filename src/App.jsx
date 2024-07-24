@@ -19,7 +19,7 @@ import Volunteering from "./pages/dashboard/pages/volunteering";
 import AddEducation from "./pages/dashboard/pages/addeducation";
 import AddVolunteering from "./pages/dashboard/pages/addvolunteering";
 import Rootlayout from "./layout/rootlayout";
-import OverView from "./pages/dashboard/pages/overview";
+import OverView from "./pages/dashboard/pages/overview"
 import { apiGetUserDetails } from "./services/preview";
 import DashboardLayout from "./pages/dashboard/layout/dashboardLayout";
 
@@ -29,14 +29,14 @@ function App() {
 
     {
       path: "/",
-      element: <Rootlayout/>,
+      element: <Rootlayout />,
       children: [
         {
           index: true,
-          element: <LandingPage/>
+          element: <LandingPage />
         },
 
-      
+
       ]
 
     },
@@ -51,13 +51,13 @@ function App() {
     },
 
 
-  {
-    path: "dashboard",
-    element: <DashboardLayout/>,
-    children: [
+    {
+      path: "dashboard",
+      element: <DashboardLayout />,
+      children: [
         {
           index: true,
-          element: <DashboardHome/>
+          element: <DashboardHome />
         },
 
         {
@@ -69,17 +69,17 @@ function App() {
           path: "dashboard/profile",
           element: <UserProfile />
         },
-    
+
         {
           path: "dashboard/skills",
           element: <Skills />
         },
-    
+
         {
           path: "dashboard/projects",
           element: <Projects />
         },
-    
+
         {
           path: "dashbaord/experiences",
           element: <Experience />
@@ -88,12 +88,12 @@ function App() {
           path: "dashboard/acheivements",
           element: <Acheivement />
         },
-    
+
         {
           path: "dashboard/education",
           element: <Education />
         },
-    
+
         {
           path: "dashboard/volunteering",
           element: <Volunteering />
@@ -103,40 +103,40 @@ function App() {
           path: "dashboard/skills/add-skill",
           element: <AddSkill />
         },
-    
+
         {
           path: "dashboard/profile/addprofile",
           element: <AddProfile />
         },
-    
+
         {
           path: "dashboard/projects/addproject",
           element: <AddProject />
         },
-    
+
         {
           path: "dashboard/experiences/addexperience",
           element: <AddExperience />
         },
-    
+
         {
           path: "dashboard/acheivements/addacheivement",
           element: <AddAcheivement />
         },
-    
+
         {
           path: "dashboard/volunteering/addvolunteering",
           element: <AddVolunteering />
         },
-    
+
         {
           path: "dashboard/education/addeducation",
           element: <AddEducation />
         },
-    ]
-  },
+      ]
+    },
 
-  
+
     {
       path: "prev",
       element: <Preview />
@@ -145,8 +145,8 @@ function App() {
 
     {
       path: "prev/ :username",
-      element: <Preview/>,
-      loader: async ({params}) => {
+      element: <Preview />,
+      loader: async ({ params }) => {
         const username = params.username;
         try {
           const response = await apiGetUserDetails(username);

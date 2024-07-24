@@ -48,8 +48,6 @@ const Acheivement = () => {
     fetchAcheivements()
   }, [])
 
-
-
   return (
 
 

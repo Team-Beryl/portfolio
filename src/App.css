@@ -6,4 +6,14 @@
     font-style: normal;
   }
 }
+@layer base{
+  @font-face {
+    font-family: "Kash";
+    src: url('./assets/fonts/KaushanScript-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+
 

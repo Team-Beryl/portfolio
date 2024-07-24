@@ -7,14 +7,16 @@ import { apiCheckUsernameExist, apiSignUp } from "../../services/auth";
 import { toast } from "react-toastify";
 import Loader from "../../components/loader";
 import { debounce } from "lodash";
+import { HomeIcon } from "lucide-react";
 
 const SignUp = () => {
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [usernameAvailable, setIsUsernameAvailable] = useState(false);
   const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
   const [isUsernameLoading, setIsUsernameLoading] = useState(false)
   const navigate = useNavigate();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
 
   const checkUserName = async (userName) => {
     
@@ -37,7 +39,7 @@ const SignUp = () => {
 
     } catch (error) {
       console.log(error)
-      toast.error(error.message)
+      toast.error("An error occured")
 
     } finally {
       setIsUsernameLoading(false)
@@ -49,14 +51,13 @@ const SignUp = () => {
 
 
   const userNameWatch = watch("userName")
-  console.log(userNameWatch);
-
+  
   useEffect(() => {
     const debouncedSearch = debounce(async() => {
       if (userNameWatch) {
-        await checkUserName(userNameWatch)
+        await checkUserName(userNameWatch);
       }
-    }, 1000)
+    }, 1000);
 
     debouncedSearch()
 
@@ -87,11 +88,9 @@ const SignUp = () => {
     try {
       const res = await apiSignUp(payload);
       console.log(res.data);
-      toast.success(res.data);
 
-      setTimeout(() => {
-        navigate("/sig")
-      }, 2000)
+      toast.success(res.data.message);
+      navigate("/signin")
 
     } catch (error) {
       console.log(error)
@@ -105,6 +104,9 @@ const SignUp = () => {
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
 
       <div className="bg-[#EE219A] md:w-1/2 flex flex-col justify-center py-16 md:py-32 px-8 md:px-16 -mt-14">
+      <div onClick={() => navigate('/') } className="pb-10 flex justify-center items-center">
+        <HomeIcon/>
+    </div>
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">Join Portfolio Hub</h1>
         <p className="text-white text-center mb-8 text-lg">
           and showcase your skills, projects, and creativity to the world. A well-crafted portfolio is an essential tool for any developer, helping you stand out in the competitive tech industry.
@@ -196,8 +198,8 @@ const SignUp = () => {
               type="password"
               placeholder="Password"
               className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" } })}
-              aria-invalid={errors.password ? "true" : "false"}
+              {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" }
+               })}
             />
             {errors.password && (<p className="text-red-500 text-sm mt-1">{errors.password.message}</p>)}
           </div>
@@ -235,7 +237,7 @@ const SignUp = () => {
 
           <div className="container signin text-center pt-3">
             <p className="text-sm">
-              Already have an account? <a href="#" className="text-blue-600" onClick={() => navigate("/sig")}>Sign in</a>.
+              Already have an account? <a href="#" className="text-blue-600" onClick={() => navigate("/signin")}>Sign in</a>.
             </p>
           </div>
         </form>

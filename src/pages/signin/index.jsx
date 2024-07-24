@@ -1,3 +1,4 @@
+
 import { google, laptop, quality } from "../../assets";
 import { useForm } from "react-hook-form";
 import { apiLogin } from "../../services/auth";
@@ -5,12 +6,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../../components/loader";
+import { HomeIcon } from "lucide-react";
 
 const Signin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate()
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -22,32 +24,30 @@ const Signin = () => {
         password: data.password,
       });
       console.log("Response", res.data)
-      toast.success(res.data)
-      setTimeout(() => {
-        navigate("/dash");
-      },2000)
-      // redirect user to dashboard
-      
+      localStorage.setItem("accessToken", res.data.accessToken)
 
+      toast.success(res.data.message);
+        navigate("/dashboard");
+      
     } catch (error) {
       console.log(error)
       toast.error("An error occured!")
-
-    }
-    finally {
+    } finally {
       setIsSubmitting(false)
     }
   };
 
   return (
     <div className="flex">
-
-      <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
+  <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
+    <div onClick={() => navigate('/') } className="pb-10">
+    <HomeIcon className=""/>
+    </div>
+         
         <div className="pb-7 font-sans text-center">
           <h1 className="text-4xl font-bold">Where did you go?</h1>
           <p className="text-2xl">Let's get you back in</p>
         </div>
-
         <form className="w-full max-w-xs mx-auto" onSubmit={handleSubmit(onSubmit)}>
 
           <div className="mb-4">
@@ -73,7 +73,6 @@ const Signin = () => {
             {errors.password && <p className="text-red-500">{errors.password.message}</p>}
           </div>
 
-
           <button
             type="submit"
             className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
@@ -82,13 +81,11 @@ const Signin = () => {
             {isSubmitting ? <Loader/> : "Sign In"}
           </button>
 
-
           <div className="flex items-center my-4 w-full">
             <hr className="flex-1 border-gray-300" />
             <span className="mx-2 text-gray-600">or</span>
             <hr className="flex-1 border-gray-300" />
           </div>
-
 
           <button
             className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200"

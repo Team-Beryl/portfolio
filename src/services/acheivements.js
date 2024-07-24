@@ -9,14 +9,17 @@ export const apiGetAcheivements = async() => {
 
 return apiClient.get("/acheivements")
 }
+ 
+export const apiGetAcheivementsById = async (id)=> 
+{
+    return apiClient.get(`/achievements/${id}`);
+};
 
-
-
-export const apiUpdateAcheivement = async() => {
-    return apiClient.patch(`/acheivements/${id}`)
+export const apiUpdateAcheivement = async(id, payload) => {
+    return apiClient.patch(`/acheivements/${id}`, payload)
 }
 
-export const apiDeleteAcheivement = async() => {
+export const apiDeleteAcheivement = async(id) => {
     return apiClient.delete(`/acheivements/${id}`)
 }
 

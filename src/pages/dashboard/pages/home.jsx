@@ -6,14 +6,26 @@ import projectimg from "../../../images/projectimg.png";
 import acheiveimg from "../../../images/acheiveimg.png";
 import volun from "../../../images/volun.png"
 import edu from "../../../images/edu.png"
+import { apiSignOut } from "../../../services/auth";
+import { toast } from "react-toastify";
 
 const DashboardHome = () => {
     const navigate = useNavigate();
+
+    const SignOut = async () => {
+        try {
+            await apiSignOut();
+            toast.success("Logged out successfully");
+            navigate("/signin");
+        } catch (error) {
+            toast.error("An error occured");
+        }
+    };
     return (
         <div>
             <div className='bg-blue-900 h-20 flex justify-around items-center pl-10 pr-10' >
                 <h3 className='text-white text-2xl' onClick={() => navigate("/")} >Portfolio Hub</h3>
-                <button className='h-9 rounded-full text-white hover:bg-white hover:text-blue-500 px-10 shadow-inner' onClick={() => navigate("/signin")}>SIGN OUT</button>
+                <button className='h-9 rounded-full text-white hover:bg-white hover:text-blue-500 px-10 shadow-inner' onClick={SignOut}>SIGN OUT</button>
             </div>
 
             <div className="text-center pt-7">

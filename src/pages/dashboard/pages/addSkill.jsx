@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { apiAddSkill } from '../../../services/skills';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
-import Loader from '../../../components/loader';
+import PageLoader from '../../../components/PageLoader';
 
 const AddSkill = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -70,7 +70,7 @@ const AddSkill = () => {
         >
         
           {
-            isSubmitting? <Loader/> : "Add Skill"
+            isSubmitting? <PageLoader/> : "Add Skill"
           }
         </button>
       </form>

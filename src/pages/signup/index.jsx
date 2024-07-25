@@ -5,21 +5,21 @@ import bezz from "../../images/bezz.png";
 import { useEffect, useState } from "react";
 import { apiCheckUsernameExist, apiSignUp } from "../../services/auth";
 import { toast } from "react-toastify";
-import Loader from "../../components/loader";
 import { debounce } from "lodash";
 import { HomeIcon } from "lucide-react";
+import PageLoader from "../../components/PageLoader";
 
 const SignUp = () => {
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [usernameAvailable, setIsUsernameAvailable] = useState(false);
   const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
   const [isUsernameLoading, setIsUsernameLoading] = useState(false)
   const navigate = useNavigate();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
   const checkUserName = async (userName) => {
-    
+
     setIsUsernameLoading(true)
     try {
       const res = await apiCheckUsernameExist(userName)
@@ -34,7 +34,7 @@ const SignUp = () => {
         setUsernameNotAvailable(false);
 
       }
-      
+
 
 
     } catch (error) {
@@ -51,9 +51,9 @@ const SignUp = () => {
 
 
   const userNameWatch = watch("userName")
-  
+
   useEffect(() => {
-    const debouncedSearch = debounce(async() => {
+    const debouncedSearch = debounce(async () => {
       if (userNameWatch) {
         await checkUserName(userNameWatch);
       }
@@ -62,7 +62,7 @@ const SignUp = () => {
     debouncedSearch()
 
     return () => {
-  debouncedSearch.cancel()
+      debouncedSearch.cancel()
 
     }
 
@@ -103,10 +103,10 @@ const SignUp = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
 
-      <div className="bg-[#EE219A] md:w-1/2 flex flex-col justify-center py-16 md:py-32 px-8 md:px-16 -mt-14">
-      <div onClick={() => navigate('/') } className="pb-10 flex justify-center items-center">
-        <HomeIcon/>
-    </div>
+      <div className="bg-[#9C52DA] md:w-1/2 flex flex-col justify-center py-16 md:py-32 px-8 md:px-16 -mt-14">
+        <div onClick={() => navigate('/')} className="pb-10 flex justify-center items-center">
+
+        </div>
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">Join Portfolio Hub</h1>
         <p className="text-white text-center mb-8 text-lg">
           and showcase your skills, projects, and creativity to the world. A well-crafted portfolio is an essential tool for any developer, helping you stand out in the competitive tech industry.
@@ -180,7 +180,7 @@ const SignUp = () => {
             {errors.userName && (<p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>)}
 
             <div className="flex items-center gap-x-2">
-              {isUsernameLoading && <Loader />}
+              {isUsernameLoading && <PageLoader />}
               {
                 usernameAvailable && <p className="text-green-500">Username is Available!</p>
               }
@@ -198,19 +198,20 @@ const SignUp = () => {
               type="password"
               placeholder="Password"
               className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" }
-               })}
+              {...register("password", {
+                required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" }
+              })}
             />
             {errors.password && (<p className="text-red-500 text-sm mt-1">{errors.password.message}</p>)}
           </div>
 
           <div className="flex items-center justify-between mb-4">
             <button
-              className="bg-[#EE219A] hover:bg-white hover:text-[#EE219A] text-white font-bold w-full py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+              className="bg-[#9C52DA] hover:bg-white hover:text-[#9C52DA] text-white font-bold w-full py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
               type="submit"
             >
 
-              {isSubmitting ? <Loader/> : "Signup For Free"}
+              {isSubmitting ? <PageLoader /> : "Signup For Free"}
             </button>
           </div>
 

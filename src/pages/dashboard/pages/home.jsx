@@ -54,7 +54,7 @@ const DashboardHome = () => {
                     </p>
                 </div>
 
-                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("/dashbaord/experiences")}>
+                <div className="border p-4 rounded-md shadow-lg mx-auto transform hover:scale-105 hover:shadow-2xl transition duration-300" onClick={() => navigate("dashbaord/experiences")}>
                     <img src={experienceimg} alt="Experiences" className="w-48 mx-auto" />
                     <span className="block text-center mt-4 font-semibold text-lg text-blue-500">Experiences</span>
                     <p className="text-center mt-2">This is your opportunity to tell your story and show potential employers the value you bring to their team.</p>

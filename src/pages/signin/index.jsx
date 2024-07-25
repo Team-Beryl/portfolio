@@ -5,8 +5,8 @@ import { apiLogin } from "../../services/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Loader from "../../components/loader";
 import { HomeIcon } from "lucide-react";
+import PageLoader from "../../components/PageLoader";
 
 const Signin = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,7 +41,7 @@ const Signin = () => {
     <div className="flex">
   <div className="flex flex-col justify-center items-center h-screen w-3/5 p-10">
     <div onClick={() => navigate('/') } className="pb-10">
-    <HomeIcon className=""/>
+    
     </div>
          
         <div className="pb-7 font-sans text-center">
@@ -78,7 +78,7 @@ const Signin = () => {
             className="w-full h-10 mt-2 bg-pink-600 text-white rounded-lg border border-white hover:bg-[#E59E81] transition duration-200"
           >
 
-            {isSubmitting ? <Loader/> : "Sign In"}
+            {isSubmitting ? <PageLoader/> : "Sign In"}
           </button>
 
           <div className="flex items-center my-4 w-full">

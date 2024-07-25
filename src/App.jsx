@@ -56,85 +56,72 @@ function App() {
       element: <DashboardLayout />,
       children: [
         {
-          index: "dashboard",
+          index: true,
           element: <DashboardHome />
         },
-
         {
-          path: "dashboard/overview",
+          path: "overview", 
           element: <OverView />
         },
-
         {
-          path: "dashboard/profile",
+          path: "/dashboard/profile", 
           element: <UserProfile />
         },
-
         {
-          path: "dashboard/skills",
+          path: "/dashboard/skills",
           element: <Skills />
         },
-
         {
-          path: "dashboard/projects",
+          path: "/dashboard/projects", 
           element: <Projects />
         },
-
         {
           path: "dashbaord/experiences",
           element: <Experience />
         },
         {
-          path: "dashboard/acheivements",
+          path: "/dashboard/acheivements",
           element: <Acheivement />
         },
-
         {
-          path: "dashboard/education",
+          path: "/dashboard/education",
           element: <Education />
         },
-
         {
-          path: "dashboard/volunteering",
+          path: "/dashboard/volunteering",
           element: <Volunteering />
         },
-
         {
-          path: "dashboard/skills/add-skill",
+          path: "/dashboard/skills/add-skill", 
           element: <AddSkill />
         },
-
         {
-          path: "dashboard/profile/addprofile",
+          path: "/dashboard/profile/addprofile", 
           element: <AddProfile />
         },
-
         {
-          path: "dashboard/projects/addproject",
+          path: "/dashboard/projects/addproject",
           element: <AddProject />
         },
-
         {
-          path: "dashboard/experiences/addexperience",
+          path: "/dashboard/experiences/addexperience", 
           element: <AddExperience />
         },
-
         {
-          path: "dashboard/acheivements/addacheivement",
+          path: "/dashboard/acheivements/addacheivement", 
           element: <AddAcheivement />
         },
-
         {
-          path: "dashboard/volunteering/addvolunteering",
+          path: "/dashboard/volunteering/addvolunteering", 
           element: <AddVolunteering />
         },
-
         {
-          path: "dashboard/education/addeducation",
+          path: "/dashboard/education/addeducation", 
           element: <AddEducation />
         },
       ]
     },
+    
 
 
     {

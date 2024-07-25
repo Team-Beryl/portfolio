@@ -3,7 +3,6 @@ import PagesLayout from '../layout/pageslayout'
 import { Edit, Trash2Icon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { apiDeleteSkill, apiGetSkills } from '../../../services/skills'
-import PageLoader from '../../../components/PageLoader'
 import { toast } from 'react-toastify'
 import Loader from '../../../components/loader'
 
@@ -49,11 +48,11 @@ const Skills = () => {
   }, []);
 
   return (
-    <PagesLayout headerText="skills" buttonDashboard="Back to Dashboard" buttonText="Add new skills " onClick={() => navigate("/dashboard/skills/add-skill")}>
+    <PagesLayout headerText="skills"  buttonText="Add new skills " onClick={() => navigate("/dashboard/skills/add-skill")}>
 
       {
         isLoading ? (
-           <PageLoader />
+           <Loader/>
            ):(
 
           <div>

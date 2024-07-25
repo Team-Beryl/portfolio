@@ -1,10 +1,10 @@
  import {CirclesWithBar} from "react-loader-spinner"
 const PageLoader = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className=" flex items-center justify-center">
         <CirclesWithBar
-    height="80"
-    width="80"
+    height="30"
+    width="30"
     color="#DB2777"
     outerCircleColor="#DB2777"
     innerCircleColor="#DB2777"

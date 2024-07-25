@@ -1,96 +1,92 @@
-import { Edit, Trash2Icon } from 'lucide-react'
-import F from '../../../constants/constants'
-import PagesLayout from '../layout/pageslayout'
-import { useNavigate } from 'react-router-dom'
-import { apiDeleteEducation, apiGetEducation } from '../../../services/education'
-import { useEffect, useState } from 'react'
-import Loader from '../../../components/loader'
-import PageLoader from '../../../components/PageLoader'
+import { Edit, Trash2Icon } from 'lucide-react';
+import F from '../../../constants/constants';
+import PagesLayout from '../layout/pageslayout';
+import { useNavigate } from 'react-router-dom';
+import { apiDeleteEducation, apiGetEducation } from '../../../services/education';
+import { useEffect, useState } from 'react';
+import Loader from '../../../components/loader';
+import { toast } from 'react-toastify';
 
 const Education = () => {
-
-  const navigate = useNavigate()
-  const [education, setEducation] = useState([])
-  const [isLoading, setIsLoading] = useState([])
-  const [isDeleting, setIsDeleting] = useState([])
+  const navigate = useNavigate();
+  const [education, setEducation] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const fetchEducation = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-
-      const res = await apiGetEducation()
-      console.log(res.data)
-      setEducation(res.data.Skills)
-
+      const res = await apiGetEducation();
+      console.log(res.data);
+      setEducation(res.data); // Assuming res.data contains the education data directly
     } catch (error) {
-      console.log(error)
+      console.log(error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
-  const handleDelete = async(_id) => {
+  const handleDelete = async (_id) => {
+    setIsDeleting(true);
     try {
-      const res = await apiDeleteEducation(_id)
-      console.log(res.data)
-      toast.success(res.data.message)
+      const res = await apiDeleteEducation(_id);
+      console.log(res.data);
+      toast.success(res.data.message);
+      fetchEducation(); // Refresh education list after delete
     } catch (error) {
-      console.log(error)
-      toast.error("An error occured")
-      
+      console.log(error);
+      toast.error("An error occurred");
+    } finally {
+      setIsDeleting(false);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchEducation()
-  }, [])
+    fetchEducation();
+  }, []);
 
   return (
     <div>
-
-      <PagesLayout headerText="Education" buttonDashboard="Back to Dashboard" buttonText="Add Education" onClick={() => navigate("/dashboard/education/addeducation")}>
-
+      <PagesLayout
+        headerText="Education"
+        buttonText="Add Education"
+        onClick={() => navigate("/dashboard/education/addeducation")}
+      >
         {
-          isLoading? <PageLoader/> : 
-          <div className='bg-gray-500 min-h-screen p-6 pt-4'>
-          <div className='grid grid-cols-4 gap-6 pt-14'>
-
+          isLoading ? <Loader /> :
+          <div className=' min-h-screen p-6 pt-4'>
             {
-              F.EDUCATION.map((education, index) => (
-
-                <div key={index} className='h-56 shadow-md rounded-lg flex flex-col gap-2 pl-5 bg-white'>
-                  <span className='font-semibold text-lg pt-3'>{education.schoolName}</span>
-                  <span className=''>{education.program}</span>
-                  <span>{education.qualification}</span>
-                  <span className='font-semibold'>{education.startDate}</span>
-                  <span className='font-semibold'>{education.endDate}</span>
-
-                  <div className='ml-auto flex gap-x-2'>
-                    <button>
-                      <Edit className='text-blue-500' />
-                    </button>
-                    <button className='text-red-500' onClick={() => handleDelete(skill._id)}>
-                      {
-                        isDeleting ? <Loader/> : <Trash2Icon />
-                      }
-                    </button>
-                  </div>
+              education.length === 0 ? (
+                <p>No Education added yet</p>
+              ) : (
+                <div className='grid grid-cols-4 gap-6 pt-14'>
+                  {
+                    education.map((edu, index) => (
+                      <div key={index} className='h-56 shadow-md rounded-lg flex flex-col gap-2 pl-5 bg-white'>
+                        <span className='font-semibold text-lg pt-3'>{edu.schoolName}</span>
+                        <span className=''>{edu.program}</span>
+                        <span>{edu.qualification}</span>
+                        <span className='font-semibold'>{edu.startDate}</span>
+                        <span className='font-semibold'>{edu.endDate}</span>
+                        <div className='ml-auto flex gap-x-2'>
+                          <button>
+                            <Edit className='text-blue-500' />
+                          </button>
+                          <button className='text-red-500' onClick={() => handleDelete(edu._id)}>
+                            {isDeleting ? <Loader /> : <Trash2Icon />}
+                          </button>
+                        </div>
+                      </div>
+                    ))
+                  }
                 </div>
-
-
-              ))
+              )
             }
           </div>
-
-        </div>
-
-         }
-
-
+        }
       </PagesLayout>
-
     </div>
-  )
+  );
 }
 
-export default Education
+export default Education;

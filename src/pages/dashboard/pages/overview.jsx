@@ -6,12 +6,14 @@ import { apiGetEducation } from '../../../services/education'
 import { apiGetVolunteering } from '../../../services/volunteering'
 import { apiGetExperiences } from '../../../services/experiences'
 import F from '../../../constants/constants'
-import { Link, useOutletContext } from 'react-router-dom'
-import PageLoader from '../../../components/PageLoader'
+import { Link, useNavigate, useOutletContext } from 'react-router-dom'
 import CountUp from "react-countup";
+import PagesLayout from '../layout/pageslayout'
+import Loader from '../../../components/loader'
 
 
 const OverView = () => {
+  const navigate = useNavigate()
   const [data, setdata] = useState({
 
     skills: 0,
@@ -78,15 +80,15 @@ const OverView = () => {
   return (
     <>
       {
-        isLoading ? (<PageLoader />) : (
-          // <PagesLayout
-          //   headerText="Overview"
-          //   buttonDashboard="Preview Page"
-          //   onClick={() => navigate("/prev")}
-          // >
+        isLoading ? (<Loader/>) : (
+          <PagesLayout
+            headerText="Overview"
+            buttonDashboard="Preview Page"
+            onClick={() => navigate("/prev")}
+          >
             <div className="bg-gray-100 min-h-screen p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-14">
-                <Link to={getPreviewLink()} > View Preview </Link>
+                
                 {F.OVERVIEW.map(({ icon, text, id }, index) => (
                   <div
                     key={index}
@@ -109,8 +111,8 @@ const OverView = () => {
                   </div>
                 ))}
               </div>
-          // </div>
-        // </PagesLayout>
+           </div>
+         </PagesLayout>
         )}
     </>
 

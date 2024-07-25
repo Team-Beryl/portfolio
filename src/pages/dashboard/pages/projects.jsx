@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PagesLayout from '../layout/pageslayout'
 import F from '../../../constants/constants'
 import { Edit, Trash2Icon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { apiDeleteProjects, apiGetProjects } from '../../../services/projects'
-import PageLoader from '../../../components/PageLoader'
+import Loader from '../../../components/loader'
 
 
 
@@ -48,11 +48,11 @@ const Projects = () => {
 
   return (
 
-    <PagesLayout headerText="Projects" buttonDashboard="Back to Dashboard" buttonText="Add Projects" onClick={() => navigate("/dashboard/projects/addproject")}>
+    <PagesLayout headerText="Projects"  buttonText="Add Projects" onClick={() => navigate("/dashboard/projects/addproject")}>
       <div className='bg-gray-100 min-h-screen p-6'>
 
         {
-          isLoading ? <PageLoader /> : <div className='grid grid-cols-3 gap-6 pt-14'>
+          isLoading ? <Loader/> : <div className='grid grid-cols-3 gap-6 pt-14'>
             {
               projects.length == 0 ?
               <p>No Project added yet</p> :

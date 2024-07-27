@@ -2,14 +2,14 @@
 
 const EducationCard = ({title, schoolName, program, qualification, grade, location, startDate, endDate }) => {
     return (
-        <div className=" text-white flex justify-center items-center h-screen w-[60] shadow-2xl pl-24">
-            <div className="flex gap-6">
-
-                <div className="flex flex-col w-96 gap-1">
-                    <h1  className="text-[20px] text-cyan-400 font-semibold text-center pb-6"> {title} </h1>
+        <div className=" text-white flex justify-center items-center  pl-24">
+            
+           
+                <div className="flex flex-col pr-16  gap-1">
+                   
                     <h1 className="text-cyan-400 text-[20px] font-bold" > {schoolName} </h1>
                     <h2> {program} </h2>
-                    <span className="flex">
+                    <span className="flex flex-col">
                         <h2> {startDate} </h2>
                         <h2> {endDate} </h2>
                     </span>
@@ -18,7 +18,7 @@ const EducationCard = ({title, schoolName, program, qualification, grade, locati
                     <p> {location} </p>
                 </div>
             </div>
-        </div>
+       
     )
 }
 

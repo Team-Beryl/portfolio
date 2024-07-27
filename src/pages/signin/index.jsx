@@ -9,10 +9,16 @@ import Loader from "../../components/loader";
 import { HomeIcon } from "lucide-react";
 
 const Signin = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const navigate = useNavigate()
+  const [isSubmitting, setIsSubmitting] = useState('false');
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
+  const addToLocalStorage = (accessToken, User) => {
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("firstName", User.firstName);
+    localStorage.setItem("lastName", User.lastName);
+    localStorage.setItem("useName", User.userName)
+  }
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -23,12 +29,16 @@ const Signin = () => {
         email: data.email,
         password: data.password,
       });
-      console.log("Response", res.data)
-      localStorage.setItem("accessToken", res.data.accessToken)
+      
+      addToLocalStorage(res.data.accessToken, res.data.User)
+      
 
       toast.success(res.data.message);
+      setTimeout(() => {
         navigate("/dashboard");
-      
+      }, 500);
+        
+     
     } catch (error) {
       console.log(error)
       toast.error("An error occured!")
@@ -88,7 +98,7 @@ const Signin = () => {
           </div>
 
           <button
-            className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200"
+            className="flex items-center justify-center w-full h-10 border border-pink-600 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-200" type="submit"
           >
             <img className="w-5 h-5 mr-2" src={google} alt="Google Logo" />
             Sign in with Google

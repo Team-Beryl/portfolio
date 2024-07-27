@@ -1,5 +1,6 @@
 import { apiClient } from "./config";
 
 export const apiGetUserDetails = async (username) => {
-    return apiClient.get(`/auth/${username}`);
+  const userData= await apiClient.get(`/auth/${username}`);
+  return userData.data
 }

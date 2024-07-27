@@ -9,13 +9,27 @@ export const apiClient = axios.create(
       
     });
 
-export const getToken = () => localStorage.getItem("accessToken");
+export const getDetails =  () => {
+    const user = {};
 
-export const clearToken = () => localStorage.removeItem("accessToken");
+    user.token = localStorage.getItem("accessToken");
+    user.firstName = localStorage.getItem("firstName");
+    user.lastName = localStorage.getItem("lastName");
+    user.userName = localStorage.getItem("userName");
+
+    return user;
+};
+
+export const clearDetails = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("fistName");
+    localStorage.removeItem("lastName");
+    localStorage.removeItem("userName");
+};
 
 apiClient.interceptors.request.use(
     (config) => {
-        const token = getToken();
+        const {token} = getDetails();
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
@@ -32,12 +46,15 @@ apiClient.interceptors.response.use(
     },
     (error) => {
         if (error.response.status === 401) {
-            clearToken();
+            clearDetails();
             window.location.replace("/signin");
         }
 
         if (error.response.status === 404) 
-        {toast.error("Not found");}
+        {
+            toast.error("Not found");
+        }
+
         return Promise.reject(error);
     }
 );

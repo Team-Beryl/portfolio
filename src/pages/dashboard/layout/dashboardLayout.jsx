@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getToken } from "../../../services/config";
+import { getDetails } from "../../../services/config";
 import { apiGetUserProfile } from "../../../services/userprofile";
 import { toast } from "react-toastify";
 import { Navigate, Outlet } from "react-router-dom";
@@ -9,7 +9,7 @@ import { Navigate, Outlet } from "react-router-dom";
 const DashboardLayout = () => {
     const [profile, setProfile] = useState();
 
-    const token = getToken();
+    const token = getDetails();
 
     const getUserProfile = async () => {
         try {

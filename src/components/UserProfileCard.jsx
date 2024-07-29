@@ -1,27 +1,18 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { github } from '../assets';
-
-
-
 
 const UserProfileCard = ({ img, name, location, sex, dateOfBirth, contact, languages, linkedin, twitter, github }) => {
     return (
-        <div className='flex flex-col gap-1'>
-            <div className='flex gap-4'>
-                <img className='w-[90px] rounded-full' src={img} alt="image" />
-                <a href="#about">
-                    <h1 className='text-4xl font-bold tracking-tight text-white sm:text-5xl'> {name} </h1>
+        <div className='flex flex-col gap-3'>
 
-                </a>
+            <div className='flex gap-4'>
+                <img className='w-40 rounded-full' src={img} alt="image" />
+                <p className='text-4xl pt-7 font-bold tracking-tight text-white sm:text-5xl'> {name} </p>
             </div>
-           
-            <h2 className=" text-white"> {contact} </h2>
+            <p className=" text-white"> {contact} </p>
             <p className=" text-white"> {languages} </p>
             <p className=" text-white"> {location} </p>
             
-           
-          
             <div className='flex gap-3 pt-3 justify-self-auto '>
                 
                 <Link to={twitter} className=' hover:bg-[#000000] w-[45px] shadow-md bg-white rounded-full flex justify-center'> <Twitter className='w-[30px] text-transparent h-10 fill-pink-600 text-center' /> </Link>

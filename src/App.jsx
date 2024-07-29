@@ -23,6 +23,7 @@ import Rootlayout from "./layout/rootlayout";
 import OverView from "./pages/dashboard/pages/overview";
 import { apiGetUserDetails } from "./services/preview";
 import DashboardLayout from "./pages/dashboard/layout/dashboardLayout";
+import { toast } from "react-toastify";
 
 function App() {
   const router = createBrowserRouter([
@@ -136,10 +137,7 @@ function App() {
   },
 
   
-    {
-      path: "prev",
-      element: <Preview />
-    },
+  
       
 {
   element: <AuthLayout/>,
@@ -155,10 +153,10 @@ function App() {
 }
 
   ]
-}
+},
 
     {
-      path: "prev/ :username",
+      path: "prev/:username",
       element: <Preview/>,
       loader: async ({params}) => {
         const username = params.username;

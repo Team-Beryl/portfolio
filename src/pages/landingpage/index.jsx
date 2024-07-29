@@ -1,6 +1,8 @@
 
 import { customize, lap, left, pub, right } from "../../assets";
 
+
+
 const LandingPage = () => {
   return (
     <div className="w-full h-full overflow-x-hidden">

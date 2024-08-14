@@ -1,8 +1,8 @@
 
 
-const EducationCard = ({title, schoolName, program, qualification, grade, location, startDate, endDate }) => {
+const EducationCard = ({ schoolName, program, qualification, grade, location, startDate, endDate }) => {
     return (
-        <div className=" text-white flex justify-center items-center  pl-24">
+        <div className="pl-28 text-white pt-16 flex  ">
             
            
                 <div className="flex flex-col pr-16  gap-1">

@@ -9,7 +9,7 @@ import Loader from "../../components/loader";
 import { HomeIcon } from "lucide-react";
 
 const Signin = () => {
-  const [isSubmitting, setIsSubmitting] = useState('false');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm({reValidateMode: "onBlur", mode: "all"});
@@ -35,7 +35,7 @@ const Signin = () => {
 
       toast.success(res.data.message);
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/signup");
       }, 500);
         
      
@@ -61,9 +61,12 @@ const Signin = () => {
         <form className="w-full max-w-xs mx-auto" onSubmit={handleSubmit(onSubmit)}>
 
           <div className="mb-4">
+            <label htmlFor="email">Email:</label>
             <input
               type="text"
               id="email"
+              name="email"
+              autoComplete="email"
               {...register("email", { required: "Email is required" })}
               placeholder="Email address"
               className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-lg outline-none"
@@ -73,10 +76,13 @@ const Signin = () => {
 
 
           <div className="mb-4">
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"
-              {...register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be at least 6 characters" } })}
+              name="password"
+              autoComplete="current-password"
+              {...register("password", { required: "Password is required", minLength: { value: 9, message: "Password must be at least 9 characters" } })}
               placeholder="Password"
               className="w-full px-4 py-2 border-2 border-pink-600 text-gray-600 rounded-lg outline-none"
             />
@@ -89,6 +95,7 @@ const Signin = () => {
           >
 
             {isSubmitting ? <Loader/> : "Sign In"}
+
           </button>
 
           <div className="flex items-center my-4 w-full">

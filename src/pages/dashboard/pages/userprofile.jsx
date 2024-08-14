@@ -61,7 +61,7 @@ const UserProfile = () => {
             <img
               src={profileimg}
               alt="profileimg"
-              className="absolute -bottom-3 left-0 rounded-full w-[200px] h-[200px] border-4 border-white"
+              className="absolute -bottom-3 left-0 rounded-full w-5  border-4 border-white"
             />
           </div>
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const AchievementCard = ({ title, award, description, image, date, nameOfInstitution, name }) => {
+const AchievementCard = ({ title, award, description, image, nameOfInstitution, }) => {
   return (
     <div className="text-white flex justify-center items-center "> 
       <div className="flex flex-col gap-6">
@@ -13,7 +13,7 @@ const AchievementCard = ({ title, award, description, image, date, nameOfInstitu
           <h2>{nameOfInstitution}</h2>
         </div>
         <Link to="about" >
-        <img className="h-20" src={image} alt="image" />
+        <img className=" w-[250px]" src={image} alt="image" />
         </Link>
       </div>
     </div>

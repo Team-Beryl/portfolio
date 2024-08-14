@@ -29,7 +29,7 @@ const Preview = () => {
         setLoading(true);
         const userData = await apiGetUserDetails(params.username);
         setUser(userData.user);
-        console.log("user", User);
+        console.log(User)
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -52,13 +52,13 @@ const Preview = () => {
 
   return (
     <div className="flex bg-indigo-950 h-screen">
-      <header className="w-1/2 flex flex-col justify-center items-center pl-14 h-screen fixed pr-10  bg-indigo-950">
+      <header className="w-2/5 flex flex-col justify-center items-center pl-24 h-screen fixed   bg-indigo-950">
        
           <UserProfileCard
             img={User.userProfile?.profilePicture ? `https://savefiles.org/${User.userProfile.profilePicture}?shareable_link=302` : pf}
-            name={`${User.firstName} ${User.lastName}`}
+            name={`${User.firstName} ${User.otherNames} ${User.lastName} `}
             location={User.userProfile?.location ? User.userProfile?.location : ''}
-            contact={`${User.email}`}
+            contact={`${User.email }`}
             languages={User.userProfile?.languages?.map((language) => (
               language
             ))}
@@ -116,7 +116,7 @@ const Preview = () => {
       </header>
 
 
-      <main className="flex-1 h-screen overflow-y-auto ml-[600px] justify-center items-center  w-1/2">
+      <main className="flex-1 h-screen overflow-y-auto ml-[600px] justify-center items-center  w-3/5">
             
         {visibleCard === 'about' && (
           <div id="about">
@@ -141,7 +141,7 @@ const Preview = () => {
             <div className="grid grid-cols-3 gap-5">
               {User.skills.map((skill, index) => (
                 <SkillsCard
-                  key={skill.id || index} // Use a unique property or index as fallback
+                  key={skill.id || index} 
                   name={skill.name ? skill.name : <p>No skill</p>}
                   levelOfProficiency={skill.levelOfProficiency ? skill.levelOfProficiency : ''}
                 />
@@ -160,7 +160,7 @@ const Preview = () => {
 
             {User.achievements.map((achievements) => (
               <AchievementCard
-                key={achievements || index}
+                key={achievements.id || index}
                 image={achievements.image ? `https://savefiles.org/${achievements.image}?shareable_link=302` : ""}
                 award={achievements.award ? achievements.award : ''}
                 description={achievements.description ? achievements.description : ''}
@@ -173,11 +173,11 @@ const Preview = () => {
 
 
         {visibleCard === 'projects' && (
-          <div id="projects" className="flex flex-col justify-center items-center gap-3 pt-10 overflow-auto">
+          <div id="projects" className="flex flex-col  gap-3 pt-10 overflow-auto">
              <h1 className="text-2xl  text-cyan-400 font-semibold text-center">Projects</h1>
             {User.projects.map((project) => (
               <ProjectsCard
-                key={project || index}
+                key={project.id || index}
                 name={project.projectName ? project.projectName : ''}
                 description={project.description ? project.description : <p> No project yet</p>}
                 contributors={project.contributors ? project.contributors : ''}
@@ -193,11 +193,11 @@ const Preview = () => {
 
 
         {visibleCard === 'experience' && (
-          <div id="experience" className='flex flex-col pt-10 gap-3  justify-center items-center'>
+          <div id="experience" className='flex flex-col pt-10 gap-7  justify-center items-center'>
              <h1 className="text-2xl  text-cyan-400 font-semibold text-center">Experiences</h1>
             {User.experiences.map((experiences) => (
               <ExperienceCard
-                key={experiences || index}
+                key={experiences.id || index}
                 title={experiences.companyName ? experiences.companyName : ''}
                 role={experiences.role ? experiences.role : ''}
                 responsibility={experiences.responsibility ? experiences.responsibility : ''}
@@ -212,11 +212,11 @@ const Preview = () => {
 
 
         {visibleCard === 'education' && (
-          <div id="education" className='flex flex-col justify-center items-center pt-10 gap-4'>
+          <div id="education" className='flex-wrap flex-col justify-center items-center pt-10 gap-4'>
              <h1 className="text-2xl  text-cyan-400 font-semibold text-center">Education</h1>
             {User.education.map((education) => (
               <EducationCard
-                key={education || index}
+                key={education.id || index}
                 schoolName={education.schoolName ? education.schoolName : <p> No education</p>}
                 program={education.program ? education.program : ''}
                 qualification={education.qualification ? education.qualification : ''}
@@ -235,10 +235,10 @@ const Preview = () => {
             <h1 className="text-2xl  text-cyan-400 font-semibold text-center">Volunteering</h1>
             {User.volunteering.map((volunteering) => (
               <VolunteeringCard
-                key={volunteering || index}
+                key={volunteering.id || index}
                 projectName="Website Enhancement Project"
                 organization={volunteering.organization ? volunteering.organization : ''}
-                description={volunteering.description ? volunteering.description : ''}
+                description={volunteering.description ? volunteering.description : 'No volunteering yet'}
                 skills={volunteering.skills ? volunteering.skills : ''}
                 startDate={volunteering.startDate ? volunteering.startDate : ''}
                 endDate={volunteering.endDate ? volunteering.endDate : ''}

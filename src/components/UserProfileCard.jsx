@@ -1,15 +1,17 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const UserProfileCard = ({ img, name, location, sex, dateOfBirth, contact, languages, linkedin, twitter, github }) => {
+const UserProfileCard = ({ img, name, location, sex, dateOfBirth, contact, languages, linkedin, twitter, github, email }) => {
     return (
-        <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-2'>
 
             <div className='flex gap-4'>
-                <img className='w-40 rounded-full' src={img} alt="image" />
+                <img className='w-[120px] rounded-full' src={img} alt="image" />
                 <p className='text-4xl pt-7 font-bold tracking-tight text-white sm:text-5xl'> {name} </p>
             </div>
+            <Link to={'mailto:email@example.com'}>
             <p className=" text-white"> {contact} </p>
+            </Link>
             <p className=" text-white"> {languages} </p>
             <p className=" text-white"> {location} </p>
             
